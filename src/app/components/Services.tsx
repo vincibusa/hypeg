@@ -1,4 +1,13 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import { useInView } from 'framer-motion';
+import { useRef } from 'react';
+
 export default function Services() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
   const services = [
     {
       icon: (
@@ -53,21 +62,67 @@ export default function Services() {
     }
   ];
 
-  return (
-    <section className="py-20">
-      <div className="container mx-auto px-6">
-        <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900">I Nostri Servizi</h2>
-          <div className="w-20 h-1 bg-purple-600 mt-2 mb-4 mx-auto"></div>
-          <p className="text-gray-600">Soluzioni digitali complete per far crescere il tuo business</p>
-        </div>
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  return (
+    <section id="servizi" className="py-20" ref={ref}>
+      <div className="container mx-auto px-6">
+        <motion.div 
+          className="text-center max-w-3xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-3xl font-bold text-gray-900">I Nostri Servizi</h2>
+          <motion.div 
+            className="w-20 h-1 bg-purple-600 mt-2 mb-4 mx-auto"
+            initial={{ width: 0 }}
+            animate={isInView ? { width: 80 } : { width: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          ></motion.div>
+          <p className="text-gray-600">Soluzioni digitali complete per far crescere il tuo business</p>
+        </motion.div>
+
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12"
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          transition={{
+            duration: 0.6,
+            ease: [0.4, 0, 0.2, 1]
+          }}
+        >
           {services.map((service, index) => (
-            <div key={index} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-              <div className="text-purple-600 mb-4">
+            <motion.div
+              key={index}
+              variants={cardVariants}
+              className="bg-white p-8 rounded-xl shadow-lg"
+              whileHover={{
+                y: -10,
+                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
+              }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            >
+              <motion.div 
+                className="text-purple-600 mb-4"
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
                 {service.icon}
-              </div>
+              </motion.div>
               <h3 className="text-xl font-bold mb-2">{service.title}</h3>
               <p className="text-gray-600">
                 {service.description}
@@ -75,9 +130,9 @@ export default function Services() {
                   <small className="text-gray-500 mt-2 block">{service.technologies}</small>
                 )}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

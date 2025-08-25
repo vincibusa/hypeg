@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
-    <section className="py-24 sm:py-32">
+    <section id="home" className="py-24 sm:py-32">
       <div className="container mx-auto px-6 text-center md:text-left">
         <div className="max-w-2xl">
           <motion.h1 

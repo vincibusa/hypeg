@@ -1,3 +1,10 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
 
+/* Improve scroll padding for fixed header */
+section {
+  scroll-margin-top: 80px;
+}
