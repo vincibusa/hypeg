@@ -9,7 +9,7 @@ export default function About() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="chi-siamo" className="bg-gray-50 py-20" ref={ref}>
+    <section id="chi-siamo" className="bg-[var(--bg-secondary)] py-20" ref={ref}>
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
@@ -18,7 +18,7 @@ export default function About() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <motion.h2 
-              className="text-3xl font-bold text-gray-900"
+              className="text-3xl font-bold text-[var(--text-primary)]"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -32,7 +32,7 @@ export default function About() {
               transition={{ duration: 0.8, delay: 0.4 }}
             ></motion.div>
             <motion.p 
-              className="text-gray-600 leading-relaxed"
+              className="text-[var(--text-secondary)] leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.6, delay: 0.6 }}

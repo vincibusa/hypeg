@@ -85,14 +85,14 @@ export default function Services() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl font-bold text-gray-900">I Nostri Servizi</h2>
+          <h2 className="text-3xl font-bold text-[var(--text-primary)]">I Nostri Servizi</h2>
           <motion.div 
             className="w-20 h-1 bg-purple-600 mt-2 mb-4 mx-auto"
             initial={{ width: 0 }}
             animate={isInView ? { width: 80 } : { width: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           ></motion.div>
-          <p className="text-gray-600">Soluzioni digitali complete per far crescere il tuo business</p>
+          <p className="text-[var(--text-secondary)]">Soluzioni digitali complete per far crescere il tuo business</p>
         </motion.div>
 
         <motion.div 
@@ -109,7 +109,7 @@ export default function Services() {
             <motion.div
               key={index}
               variants={cardVariants}
-              className="bg-white p-8 rounded-xl shadow-lg"
+              className="bg-[var(--card-bg)] p-8 rounded-xl shadow-lg border border-[var(--card-border)]"
               whileHover={{
                 y: -10,
                 boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
@@ -123,11 +123,11 @@ export default function Services() {
               >
                 {service.icon}
               </motion.div>
-              <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-bold mb-2 text-[var(--text-primary)]">{service.title}</h3>
+              <p className="text-[var(--text-secondary)]">
                 {service.description}
                 {service.technologies && (
-                  <small className="text-gray-500 mt-2 block">{service.technologies}</small>
+                  <small className="text-[var(--text-secondary)] opacity-75 mt-2 block">{service.technologies}</small>
                 )}
               </p>
             </motion.div>

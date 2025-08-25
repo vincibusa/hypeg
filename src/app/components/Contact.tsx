@@ -47,7 +47,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contatti" className="bg-gray-50 py-20" ref={ref}>
+    <section id="contatti" className="bg-[var(--bg-secondary)] py-20" ref={ref}>
       <div className="container mx-auto px-6">
         <motion.div 
           className="text-center max-w-3xl mx-auto"
@@ -55,19 +55,19 @@ export default function Contact() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl font-bold text-gray-900">Contattaci</h2>
+          <h2 className="text-3xl font-bold text-[var(--text-primary)]">Contattaci</h2>
           <motion.div 
             className="w-20 h-1 bg-purple-600 mt-2 mb-4 mx-auto"
             initial={{ width: 0 }}
             animate={isInView ? { width: 80 } : { width: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           ></motion.div>
-          <p className="text-gray-600">Hai un progetto in mente? Parliamone!</p>
+          <p className="text-[var(--text-secondary)]">Hai un progetto in mente? Parliamone!</p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 mt-12">
           <motion.form 
-            className="bg-white p-8 rounded-xl shadow-lg" 
+            className="bg-[var(--card-bg)] p-8 rounded-xl shadow-lg border border-[var(--card-border)]" 
             onSubmit={handleSubmit}
             variants={containerVariants}
             initial="hidden"
@@ -76,7 +76,7 @@ export default function Contact() {
             transition={{ duration: 0.3 }}
           >
             <motion.div className="mb-4" variants={fieldVariants}>
-              <label htmlFor="name" className="block text-gray-700 text-sm font-medium mb-2">
+              <label htmlFor="name" className="block text-[var(--text-primary)] text-sm font-medium mb-2">
                 Nome
               </label>
               <motion.input
@@ -85,14 +85,14 @@ export default function Contact() {
                 placeholder="Il tuo nome"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500 transition-all duration-300"
+                className="w-full px-4 py-2 border border-[var(--border-primary)] rounded-lg focus:ring-purple-500 focus:border-purple-500 transition-all duration-300 bg-[var(--bg-primary)] text-[var(--text-primary)]"
                 whileFocus={{ scale: 1.02 }}
                 required
               />
             </motion.div>
             
             <motion.div className="mb-4" variants={fieldVariants}>
-              <label htmlFor="email" className="block text-gray-700 text-sm font-medium mb-2">
+              <label htmlFor="email" className="block text-[var(--text-primary)] text-sm font-medium mb-2">
                 Email
               </label>
               <motion.input
@@ -101,14 +101,14 @@ export default function Contact() {
                 placeholder="La tua email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500 transition-all duration-300"
+                className="w-full px-4 py-2 border border-[var(--border-primary)] rounded-lg focus:ring-purple-500 focus:border-purple-500 transition-all duration-300 bg-[var(--bg-primary)] text-[var(--text-primary)]"
                 whileFocus={{ scale: 1.02 }}
                 required
               />
             </motion.div>
             
             <motion.div className="mb-4" variants={fieldVariants}>
-              <label htmlFor="subject" className="block text-gray-700 text-sm font-medium mb-2">
+              <label htmlFor="subject" className="block text-[var(--text-primary)] text-sm font-medium mb-2">
                 Oggetto
               </label>
               <motion.input
@@ -117,14 +117,14 @@ export default function Contact() {
                 placeholder="Oggetto del messaggio"
                 value={formData.subject}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500 transition-all duration-300"
+                className="w-full px-4 py-2 border border-[var(--border-primary)] rounded-lg focus:ring-purple-500 focus:border-purple-500 transition-all duration-300 bg-[var(--bg-primary)] text-[var(--text-primary)]"
                 whileFocus={{ scale: 1.02 }}
                 required
               />
             </motion.div>
             
             <motion.div className="mb-6" variants={fieldVariants}>
-              <label htmlFor="message" className="block text-gray-700 text-sm font-medium mb-2">
+              <label htmlFor="message" className="block text-[var(--text-primary)] text-sm font-medium mb-2">
                 Messaggio
               </label>
               <motion.textarea
@@ -133,7 +133,7 @@ export default function Contact() {
                 placeholder="Il tuo messaggio"
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500 transition-all duration-300"
+                className="w-full px-4 py-2 border border-[var(--border-primary)] rounded-lg focus:ring-purple-500 focus:border-purple-500 transition-all duration-300 bg-[var(--bg-primary)] text-[var(--text-primary)]"
                 whileFocus={{ scale: 1.02 }}
                 required
               />
@@ -211,15 +211,15 @@ export default function Contact() {
                     {item.icon}
                   </motion.div>
                   <div>
-                    <h4 className="font-semibold">{item.title}</h4>
-                    <p className="text-gray-600">{item.content}</p>
+                    <h4 className="font-semibold text-[var(--text-primary)]">{item.title}</h4>
+                    <p className="text-[var(--text-secondary)]">{item.content}</p>
                   </div>
                 </motion.div>
               ))}
             </motion.div>
 
             <motion.div 
-              className="mt-8 bg-gray-200 h-80 rounded-lg flex items-center justify-center text-gray-500"
+              className="mt-8 bg-[var(--bg-secondary)] h-80 rounded-lg flex items-center justify-center text-[var(--text-secondary)]"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.6, delay: 0.8 }}

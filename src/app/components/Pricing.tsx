@@ -257,7 +257,7 @@ export default function Pricing() {
   };
 
   return (
-    <section id="prezzi" className="py-20 bg-white" ref={ref}>
+    <section id="prezzi" className="py-20 bg-[var(--bg-primary)]" ref={ref}>
       <div className="container mx-auto px-6">
         <motion.div 
           className="text-center max-w-4xl mx-auto"
@@ -265,18 +265,18 @@ export default function Pricing() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl font-bold text-gray-900">I Nostri Servizi</h2>
+          <h2 className="text-3xl font-bold text-[var(--text-primary)]">I Nostri Servizi</h2>
           <motion.div 
             className="w-20 h-1 bg-purple-600 mt-2 mb-4 mx-auto"
             initial={{ width: 0 }}
             animate={isInView ? { width: 80 } : { width: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           ></motion.div>
-          <p className="text-gray-600 mb-8">Scopri i nostri pacchetti personalizzati per la tua presenza digitale</p>
+          <p className="text-[var(--text-secondary)] mb-8">Scopri i nostri pacchetti personalizzati per la tua presenza digitale</p>
           
           {/* Tabs per categorie */}
           <div className="flex justify-center mb-8">
-            <div className="bg-gray-100 rounded-full p-1 inline-flex">
+            <div className="bg-[var(--bg-secondary)] rounded-full p-1 inline-flex">
               {categories.map((category) => (
                 <button
                   key={category}
@@ -284,7 +284,7 @@ export default function Pricing() {
                   className={`px-6 py-3 rounded-full font-semibold transition duration-300 ${
                     activeCategory === category
                       ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-lg'
-                      : 'text-gray-600 hover:text-gray-900'
+                      : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
                   }`}
                 >
                   {category === 'Social' ? 'Pacchetti Social' : 
@@ -307,10 +307,10 @@ export default function Pricing() {
             <motion.div
               key={index}
               variants={cardVariants}
-              className={`relative bg-white rounded-2xl shadow-lg p-8 h-full flex flex-col ${
+              className={`relative bg-[var(--card-bg)] rounded-2xl shadow-lg p-8 h-full flex flex-col border border-[var(--card-border)] ${
                 plan.popular 
                   ? 'ring-2 ring-purple-600 transform scale-105' 
-                  : 'border border-gray-200'
+                  : ''
               }`}
               whileHover={{
                 y: -10,
@@ -332,13 +332,13 @@ export default function Pricing() {
               )}
 
               <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
+                <h3 className="text-2xl font-bold text-[var(--text-primary)] mb-2">{plan.name}</h3>
                 <div className="mb-4">
                   <span className="text-4xl font-bold text-purple-600">€{plan.price}</span>
-                  <span className="text-gray-600">/{plan.period}</span>
-                  <div className="text-xs text-gray-500">+IVA</div>
+                  <span className="text-[var(--text-secondary)]">/{plan.period}</span>
+                  <div className="text-xs text-[var(--text-secondary)] opacity-75">+IVA</div>
                 </div>
-                <p className="text-gray-600 text-sm">{plan.description}</p>
+                <p className="text-[var(--text-secondary)] text-sm">{plan.description}</p>
               </div>
 
               <ul className="space-y-3 mb-8 flex-grow">
@@ -353,7 +353,7 @@ export default function Pricing() {
                     <svg className="h-5 w-5 text-purple-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-gray-700 text-sm">{feature}</span>
+                    <span className="text-[var(--text-primary)] text-sm">{feature}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -363,7 +363,7 @@ export default function Pricing() {
                 className={`block w-full py-3 px-6 rounded-full font-semibold transition duration-300 text-center mt-auto ${
                   plan.popular
                     ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white hover:shadow-lg'
-                    : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
+                    : 'bg-[var(--bg-secondary)] text-[var(--text-primary)] hover:bg-[var(--accent-primary)] hover:text-white'
                 }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -383,7 +383,7 @@ export default function Pricing() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ delay: 1.5 }}
         >
-          <p className="text-gray-600 mb-4">
+          <p className="text-[var(--text-secondary)] mb-4">
             Hai esigenze specifiche? Creiamo un piano personalizzato per te.
           </p>
           <motion.a
