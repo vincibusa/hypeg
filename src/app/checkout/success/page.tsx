@@ -95,24 +95,24 @@ function SuccessContent() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-[var(--bg-secondary)] flex items-center justify-center">
         <motion.div
           className="text-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
         >
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">Verificando il pagamento...</p>
+          <p className="text-[var(--text-secondary)]">Verificando il pagamento...</p>
         </motion.div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
+    <div className="min-h-screen bg-[var(--bg-secondary)] py-12">
       <div className="max-w-2xl mx-auto px-6">
         <motion.div
-          className="bg-white rounded-2xl shadow-lg p-8 text-center"
+          className="bg-[var(--card-bg)] rounded-2xl shadow-lg p-8 text-center border border-[var(--card-border)]"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -131,7 +131,7 @@ function SuccessContent() {
 
           {/* Titolo */}
           <motion.h1
-            className="text-3xl font-bold text-gray-900 mb-4"
+            className="text-3xl font-bold text-[var(--text-primary)] mb-4"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
@@ -141,7 +141,7 @@ function SuccessContent() {
 
           {/* Messaggio di successo */}
           <motion.p
-            className="text-gray-600 mb-8"
+            className="text-[var(--text-secondary)] mb-8"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
@@ -152,28 +152,28 @@ function SuccessContent() {
           {/* Dettagli dell'ordine */}
           {orderDetails && (
             <motion.div
-              className="bg-gray-50 rounded-lg p-6 mb-8 text-left"
+              className="bg-[var(--bg-secondary)] rounded-lg p-6 mb-8 text-left"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9 }}
             >
-              <h3 className="font-semibold text-gray-900 mb-4 text-center">Dettagli dell'ordine</h3>
+              <h3 className="font-semibold text-[var(--text-primary)] mb-4 text-center">Dettagli dell'ordine</h3>
               <div className="space-y-3">
                 <div className="flex justify-between">
-                  <span className="text-gray-600">Ordine ID:</span>
-                  <span className="font-medium text-sm">{orderDetails.orderID}</span>
+                  <span className="text-[var(--text-secondary)]">Ordine ID:</span>
+                  <span className="font-medium text-sm text-[var(--text-primary)]">{orderDetails.orderID}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-600">Piano:</span>
-                  <span className="font-medium">{orderDetails.planName}</span>
+                  <span className="text-[var(--text-secondary)]">Piano:</span>
+                  <span className="font-medium text-[var(--text-primary)]">{orderDetails.planName}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-600">Importo:</span>
-                  <span className="font-medium">€{orderDetails.amount}/{selectedPlan?.period} +IVA</span>
+                  <span className="text-[var(--text-secondary)]">Importo:</span>
+                  <span className="font-medium text-[var(--text-primary)]">€{orderDetails.amount}/{selectedPlan?.period} +IVA</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-600">Data:</span>
-                  <span className="font-medium">{orderDetails.timestamp}</span>
+                  <span className="text-[var(--text-secondary)]">Data:</span>
+                  <span className="font-medium text-[var(--text-primary)]">{orderDetails.timestamp}</span>
                 </div>
               </div>
             </motion.div>
@@ -186,8 +186,8 @@ function SuccessContent() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.1 }}
           >
-            <h3 className="font-semibold text-gray-900 mb-3">Cosa succede ora?</h3>
-            <ul className="text-left text-gray-600 space-y-2">
+            <h3 className="font-semibold text-[var(--text-primary)] mb-3">Cosa succede ora?</h3>
+            <ul className="text-left text-[var(--text-secondary)] space-y-2">
               <li className="flex items-start space-x-2">
                 <span className="text-purple-600 mt-1">•</span>
                 <span>Riceverai una email di conferma entro 5 minuti</span>
@@ -221,7 +221,7 @@ function SuccessContent() {
             
             <motion.a
               href="/"
-              className="block w-full bg-gray-100 text-gray-800 font-semibold py-3 px-6 rounded-full hover:bg-gray-200 transition duration-300"
+              className="block w-full bg-[var(--bg-secondary)] text-[var(--text-primary)] font-semibold py-3 px-6 rounded-full hover:bg-[var(--accent-primary)] hover:text-white transition duration-300"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -236,7 +236,7 @@ function SuccessContent() {
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5 }}
           >
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-[var(--text-secondary)]">
               Hai domande? Contattaci a{' '}
               <a href="mailto:info@hipeg.it" className="text-purple-600 hover:text-purple-700">
                 info@hipeg.it
@@ -256,7 +256,7 @@ function SuccessContent() {
 export default function SuccessPage() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-[var(--bg-secondary)] flex items-center justify-center">
         <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-purple-600"></div>
       </div>
     }>

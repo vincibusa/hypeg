@@ -329,27 +329,27 @@ export default function CheckoutPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">Checkout</h1>
-          <p className="text-gray-600">Completa il tuo acquisto per il piano {selectedPlan.name}</p>
+          <h1 className="text-3xl font-bold text-[var(--text-primary)] mb-4">Checkout</h1>
+          <p className="text-[var(--text-secondary)]">Completa il tuo acquisto per il piano {selectedPlan.name}</p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Dettagli del piano */}
           <motion.div
-            className="bg-white rounded-2xl shadow-lg p-8"
+            className="bg-[var(--card-bg)] rounded-2xl shadow-lg p-8 border border-[var(--card-border)]"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Piano {selectedPlan.name}</h2>
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">Piano {selectedPlan.name}</h2>
             <div className="mb-6">
               <span className="text-4xl font-bold text-purple-600">€{selectedPlan.price}</span>
-              <span className="text-gray-600">/{selectedPlan.period}</span>
-              <div className="text-sm text-gray-500">+IVA</div>
+              <span className="text-[var(--text-secondary)]">/{selectedPlan.period}</span>
+              <div className="text-sm text-[var(--text-secondary)] opacity-75">+IVA</div>
             </div>
-            <p className="text-gray-600 mb-6">{selectedPlan.description}</p>
+            <p className="text-[var(--text-secondary)] mb-6">{selectedPlan.description}</p>
             
-            <h3 className="font-semibold text-gray-900 mb-4">Cosa include:</h3>
+            <h3 className="font-semibold text-[var(--text-primary)] mb-4">Cosa include:</h3>
             <ul className="space-y-3">
               {selectedPlan.features.map((feature, index) => (
                 <motion.li
@@ -362,7 +362,7 @@ export default function CheckoutPage() {
                   <svg className="h-5 w-5 text-purple-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-gray-700">{feature}</span>
+                  <span className="text-[var(--text-primary)]">{feature}</span>
                 </motion.li>
               ))}
             </ul>
@@ -370,12 +370,12 @@ export default function CheckoutPage() {
 
           {/* Sezione pagamento */}
           <motion.div
-            className="bg-white rounded-2xl shadow-lg p-8"
+            className="bg-[var(--card-bg)] rounded-2xl shadow-lg p-8 border border-[var(--card-border)]"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Pagamento</h2>
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">Pagamento</h2>
             
             {error && (
               <motion.div
@@ -394,14 +394,14 @@ export default function CheckoutPage() {
               </motion.div>
             )}
 
-            <div className="bg-gray-50 rounded-lg p-4 mb-6">
+            <div className="bg-[var(--bg-secondary)] rounded-lg p-4 mb-6">
               <div className="flex justify-between items-center">
-                <span className="text-gray-600">Piano {selectedPlan.name}</span>
-                <span className="font-semibold">€{selectedPlan.price}/{selectedPlan.period} +IVA</span>
+                <span className="text-[var(--text-secondary)]">Piano {selectedPlan.name}</span>
+                <span className="font-semibold text-[var(--text-primary)]">€{selectedPlan.price}/{selectedPlan.period} +IVA</span>
               </div>
-              <div className="border-t border-gray-200 mt-2 pt-2">
+              <div className="border-t border-[var(--border-primary)] mt-2 pt-2">
                 <div className="flex justify-between items-center font-bold">
-                  <span>Totale</span>
+                  <span className="text-[var(--text-primary)]">Totale</span>
                   <span className="text-purple-600">€{selectedPlan.price} +IVA</span>
                 </div>
               </div>
@@ -410,7 +410,7 @@ export default function CheckoutPage() {
             {loading && (
               <div className="flex items-center justify-center py-8">
                 <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-purple-600"></div>
-                <span className="ml-3 text-gray-600">Elaborazione...</span>
+                <span className="ml-3 text-[var(--text-secondary)]">Elaborazione...</span>
               </div>
             )}
 
@@ -420,7 +420,7 @@ export default function CheckoutPage() {
               </PayPalScriptProvider>
             )}
 
-            <div className="mt-6 text-center text-sm text-gray-500">
+            <div className="mt-6 text-center text-sm text-[var(--text-secondary)]">
               <p>Pagamento sicuro tramite PayPal</p>
               <p className="mt-2">
                 <a href="/#prezzi" className="text-purple-600 hover:text-purple-700">

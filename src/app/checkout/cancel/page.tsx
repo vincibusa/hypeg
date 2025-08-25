@@ -9,10 +9,10 @@ function CancelContent() {
   const planId = searchParams.get('planId');
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
+    <div className="min-h-screen bg-[var(--bg-secondary)] py-12">
       <div className="max-w-2xl mx-auto px-6">
         <motion.div
-          className="bg-white rounded-2xl shadow-lg p-8 text-center"
+          className="bg-[var(--card-bg)] rounded-2xl shadow-lg p-8 text-center border border-[var(--card-border)]"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -31,7 +31,7 @@ function CancelContent() {
 
           {/* Titolo */}
           <motion.h1
-            className="text-3xl font-bold text-gray-900 mb-4"
+            className="text-3xl font-bold text-[var(--text-primary)] mb-4"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
@@ -41,7 +41,7 @@ function CancelContent() {
 
           {/* Messaggio */}
           <motion.p
-            className="text-gray-600 mb-8"
+            className="text-[var(--text-secondary)] mb-8"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
@@ -56,8 +56,8 @@ function CancelContent() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9 }}
           >
-            <h3 className="font-semibold text-gray-900 mb-3">Cosa puoi fare ora?</h3>
-            <ul className="text-left text-gray-600 space-y-2">
+            <h3 className="font-semibold text-[var(--text-primary)] mb-3">Cosa puoi fare ora?</h3>
+            <ul className="text-left text-[var(--text-secondary)] space-y-2">
               <li className="flex items-start space-x-2">
                 <span className="text-blue-600 mt-1">•</span>
                 <span>Riprova il pagamento quando sei pronto</span>
@@ -93,7 +93,7 @@ function CancelContent() {
             
             <motion.a
               href="/#prezzi"
-              className="block w-full bg-gray-100 text-gray-800 font-semibold py-3 px-6 rounded-full hover:bg-gray-200 transition duration-300"
+              className="block w-full bg-[var(--bg-secondary)] text-[var(--text-primary)] font-semibold py-3 px-6 rounded-full hover:bg-[var(--accent-primary)] hover:text-white transition duration-300"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -117,7 +117,7 @@ function CancelContent() {
             animate={{ opacity: 1 }}
             transition={{ delay: 1.3 }}
           >
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-[var(--text-secondary)]">
               Hai bisogno di aiuto? Siamo qui per te!{' '}
               <a href="mailto:info@hipeg.it" className="text-purple-600 hover:text-purple-700">
                 info@hipeg.it
@@ -137,7 +137,7 @@ function CancelContent() {
 export default function CancelPage() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-[var(--bg-secondary)] flex items-center justify-center">
         <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-purple-600"></div>
       </div>
     }>
