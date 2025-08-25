@@ -8,7 +8,7 @@ import Footer from './components/Footer';
 
 export default function Home() {
   return (
-    <div className="bg-[var(--bg-primary)] text-[var(--text-primary)]">
+    <div className="bg-[var(--bg-primary)] text-[var(--text-primary)] overflow-hidden">
       <Header />
       <main>
         <Hero />
