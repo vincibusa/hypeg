@@ -2,8 +2,9 @@
 
 import { motion } from 'framer-motion';
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 
-export default function CancelPage() {
+function CancelContent() {
   const searchParams = useSearchParams();
   const planId = searchParams.get('planId');
 
@@ -130,5 +131,17 @@ export default function CancelPage() {
         </motion.div>
       </div>
     </div>
+  );
+}
+
+export default function CancelPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-purple-600"></div>
+      </div>
+    }>
+      <CancelContent />
+    </Suspense>
   );
 }
