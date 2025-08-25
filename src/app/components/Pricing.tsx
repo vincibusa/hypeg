@@ -164,8 +164,9 @@ export default function Pricing() {
                 ))}
               </ul>
 
-              <motion.button
-                className={`w-full py-3 px-6 rounded-full font-semibold transition duration-300 ${
+              <motion.a
+                href={`/checkout/${plan.name.toLowerCase()}`}
+                className={`block w-full py-3 px-6 rounded-full font-semibold transition duration-300 text-center ${
                   plan.popular
                     ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white hover:shadow-lg'
                     : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
@@ -177,7 +178,7 @@ export default function Pricing() {
                 transition={{ delay: 1 + index * 0.2 }}
               >
                 {plan.ctaText}
-              </motion.button>
+              </motion.a>
             </motion.div>
           ))}
         </motion.div>
