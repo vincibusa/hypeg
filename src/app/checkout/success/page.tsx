@@ -5,17 +5,65 @@ import { useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 
 const plans = {
-  starter: {
-    name: 'Starter',
-    price: '299'
+  'a-tutto-meta': {
+    name: 'A tutto Meta',
+    price: '99,90',
+    period: 'mese'
   },
-  professional: {
-    name: 'Professional',
-    price: '599'
+  'a-tutto-meta-20': {
+    name: 'A tutto Meta 2.0',
+    price: '149,90',
+    period: 'mese'
   },
-  enterprise: {
-    name: 'Enterprise',
-    price: '999'
+  'linkedin': {
+    name: 'LinkedIn',
+    price: '69,90',
+    period: 'mese'
+  },
+  'tiktok': {
+    name: 'TikTok',
+    price: '199,90',
+    period: 'mese'
+  },
+  'pack-professionale': {
+    name: 'Pack Professionale',
+    price: '499,90',
+    period: 'mese'
+  },
+  'sito-landing': {
+    name: 'Sito Landing Page',
+    price: '299,90',
+    period: 'anno'
+  },
+  'sito-standard': {
+    name: 'Sito Standard',
+    price: '390,90',
+    period: 'anno'
+  },
+  'sito-large': {
+    name: 'Sito Large',
+    price: '799,90',
+    period: 'anno'
+  },
+  'e-shop-basic': {
+    name: 'E-shop Basic',
+    price: '999,90',
+    period: 'anno'
+  },
+  'e-shop-ultra': {
+    name: 'E-shop Ultra',
+    price: '1499,90',
+    period: 'anno'
+  },
+  'sito-ricettive': {
+    name: 'Sito Strutture Ricettive',
+    price: '1499,90',
+    period: 'anno'
+  },
+  'grafica': {
+    name: 'Grafica',
+    price: '59,90',
+    period: 'mese'
   }
 };
 
@@ -121,7 +169,7 @@ function SuccessContent() {
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Importo:</span>
-                  <span className="font-medium">€{orderDetails.amount}/mese</span>
+                  <span className="font-medium">€{orderDetails.amount}/{selectedPlan?.period} +IVA</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Data:</span>

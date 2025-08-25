@@ -2,68 +2,239 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 export default function Pricing() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const pricingPlans = [
+  const socialPlans = [
     {
-      name: "Starter",
-      price: "299",
+      id: "a-tutto-meta",
+      name: "A tutto Meta",
+      price: "99,90",
       period: "mese",
-      description: "Perfetto per piccole attività che vogliono iniziare con la presenza digitale",
+      category: "Social",
+      description: "Gestione completa di Instagram e Facebook per la tua presenza digitale",
       features: [
-        "Sito web responsive (5 pagine)",
-        "Ottimizzazione SEO base",
-        "Gestione social (2 piattaforme)",
-        "3 post a settimana",
-        "Supporto email",
-        "Analytics mensili"
+        "Gestione Pagina Instagram e Facebook",
+        "3 grafiche settimanali personalizzate (uguali per entrambi i canali)",
+        "3 pubblicazioni a settimana + 3 stories",
+        "Grafica personalizzata e copy"
       ],
       popular: false,
       ctaText: "Inizia ora"
     },
     {
-      name: "Professional",
-      price: "599",
+      id: "a-tutto-meta-20",
+      name: "A tutto Meta 2.0",
+      price: "149,90",
       period: "mese",
-      description: "La soluzione completa per aziende che vogliono crescere online",
+      category: "Social",
+      description: "Versione avanzata con campagne pubblicitarie e reporting",
       features: [
-        "Sito web avanzato (10 pagine)",
-        "E-commerce base (fino a 50 prodotti)",
-        "Gestione social (4 piattaforme)",
-        "5 post a settimana + stories",
-        "Campagne pubblicitarie (budget escluso)",
-        "Video promozionali (2/mese)",
-        "Supporto prioritario",
-        "Analytics dettagliati"
+        "Gestione Pagina Instagram e Facebook",
+        "3 grafiche settimanali (uguali per entrambi i canali)",
+        "3 pubblicazioni a settimana + 3 stories",
+        "Grafica personalizzata e copy",
+        "Campagne a pagamento",
+        "Report trimestrale"
       ],
       popular: true,
-      ctaText: "Scegli Professional"
+      ctaText: "Piano Consigliato"
     },
     {
-      name: "Enterprise",
-      price: "999",
+      id: "linkedin",
+      name: "LinkedIn",
+      price: "69,90",
       period: "mese",
-      description: "Soluzione su misura per grandi aziende con esigenze specifiche",
+      category: "Social",
+      description: "Gestione professionale della tua presenza LinkedIn",
       features: [
-        "Sito web personalizzato (illimitate)",
-        "E-commerce avanzato (prodotti illimitati)",
-        "Gestione social completa",
-        "Post quotidiani + contenuti premium",
-        "Campagne pubblicitarie avanzate",
-        "Video professionali (4/mese)",
-        "Branding e identità visiva",
-        "Corsi e-learning personalizzati",
-        "Account manager dedicato",
-        "Supporto 24/7"
+        "Gestione Pagina LinkedIn",
+        "2 pubblicazioni a settimana",
+        "Grafica personalizzata e copy"
       ],
       popular: false,
-      ctaText: "Contattaci"
+      ctaText: "Scegli LinkedIn"
+    },
+    {
+      id: "tiktok",
+      name: "TikTok",
+      price: "199,90",
+      period: "mese",
+      category: "Social",
+      description: "Gestione e montaggio professionale per TikTok",
+      features: [
+        "Gestione e montaggio",
+        "2 pubblicazioni a settimana"
+      ],
+      popular: false,
+      ctaText: "Scegli TikTok"
+    },
+    {
+      id: "pack-professionale",
+      name: "Pack Professionale",
+      price: "499,90",
+      period: "mese",
+      category: "Social",
+      description: "Gestione completa di tutti i canali social",
+      features: [
+        "Instagram - Facebook - TikTok - LinkedIn",
+        "Creatività grafica + copy",
+        "5 post + 5 stories a settimana (uguali)",
+        "Pubblicazione",
+        "1 Reel a settimana",
+        "4 video TikTok al mese"
+      ],
+      popular: false,
+      ctaText: "All-in-One"
     }
   ];
+
+  const webPlans = [
+    {
+      id: "sito-landing",
+      name: "Sito Landing Page",
+      price: "299,90",
+      period: "anno",
+      category: "Web",
+      description: "Pagina singola efficace per presentare la tua attività",
+      features: [
+        "1 pagina",
+        "Creazione Sito Efficace + dominio web .it o .com",
+        "Ottimizzazione SEO base: Strutturazione SEO on-page per miglior posizionamento",
+        "Design grafico personalizzato: Realizzazione grafica del sito, responsive design"
+      ],
+      popular: false,
+      ctaText: "Scegli Landing"
+    },
+    {
+      id: "sito-standard",
+      name: "Sito Standard",
+      price: "390,90",
+      period: "anno",
+      category: "Web",
+      description: "Sito completo fino a 5 pagine per piccole e medie aziende",
+      features: [
+        "Fino a 5 pagine",
+        "Creazione Sito Efficace + dominio web .it o .com",
+        "Ottimizzazione SEO base: Strutturazione SEO on-page per miglior posizionamento",
+        "Design grafico personalizzato: Realizzazione grafica del sito, responsive design"
+      ],
+      popular: true,
+      ctaText: "Più Richiesto"
+    },
+    {
+      id: "sito-large",
+      name: "Sito Large",
+      price: "799,90",
+      period: "anno",
+      category: "Web",
+      description: "Sito professionale fino a 32 pagine per aziende strutturate",
+      features: [
+        "Fino a 32 pagine",
+        "Creazione Sito Efficace + dominio web .it o .com",
+        "Ottimizzazione SEO base: Strutturazione SEO on-page per miglior posizionamento",
+        "Design grafico personalizzato: Realizzazione grafica del sito, responsive design"
+      ],
+      popular: false,
+      ctaText: "Scegli Large"
+    },
+    {
+      id: "e-shop-basic",
+      name: "E-shop Basic",
+      price: "999,90",
+      period: "anno",
+      category: "Web",
+      description: "E-commerce completo fino a 100 prodotti",
+      features: [
+        "Analisi e consulenza: Definizione requisiti, target e funzionalità richieste",
+        "Design grafico personalizzato: Realizzazione grafica del sito, responsive design",
+        "Sviluppo e implementazione eShop: Creazione della piattaforma e-commerce",
+        "Integrazione sistemi di pagamento: PayPal, carte di credito, altri metodi",
+        "Inserimento prodotti (fino a 100 prodotti): Caricamento dati prodotti, descrizioni e immagini",
+        "Formazione utilizzo CMS: Addestramento all'uso della piattaforma",
+        "Ottimizzazione SEO base: Strutturazione SEO on-page",
+        "Hosting e dominio",
+        "Manutenzione e supporto"
+      ],
+      popular: false,
+      ctaText: "Inizia a Vendere"
+    },
+    {
+      id: "e-shop-ultra",
+      name: "E-shop Ultra",
+      price: "1499,90",
+      period: "anno",
+      category: "Web",
+      description: "E-commerce avanzato fino a 500 prodotti",
+      features: [
+        "Analisi e consulenza: Definizione requisiti, target e funzionalità richieste",
+        "Design grafico personalizzato: Realizzazione grafica del sito, responsive design",
+        "Sviluppo e implementazione eShop: Creazione della piattaforma e-commerce",
+        "Integrazione sistemi di pagamento: PayPal, carte di credito, altri metodi",
+        "Inserimento prodotti (fino a 500 prodotti): Caricamento dati prodotti, descrizioni e immagini",
+        "Formazione utilizzo CMS: Addestramento all'uso della piattaforma",
+        "Ottimizzazione SEO base: Strutturazione SEO on-page",
+        "Hosting e dominio",
+        "Manutenzione e supporto"
+      ],
+      popular: false,
+      ctaText: "Vendita Pro"
+    },
+    {
+      id: "sito-ricettive",
+      name: "Sito Strutture Ricettive",
+      price: "1499,90",
+      period: "anno",
+      category: "Web",
+      description: "Piattaforma specializzata per hotel, B&B e strutture ricettive",
+      features: [
+        "Analisi e consulenza: Definizione esigenze specifiche e target clienti",
+        "Design personalizzato: Sviluppo piattaforma eCommerce",
+        "Catalogo servizi e prodotti, gestione disponibilità e prenotazioni",
+        "Collegamento con software gestionale della struttura (PMS)",
+        "Sistemi di pagamento sicuri: PayPal, carte di credito, bonifico",
+        "Inserimento contenuti e prodotti: Caricamento pacchetti, servizi, descrizioni",
+        "Formazione gestione piattaforma: Training per gestione ordini, disponibilità, offerte",
+        "Ottimizzazione SEO base: Ottimizzazione per motori di ricerca e visibilità locale",
+        "Hosting e dominio (12 mesi): Registrazione dominio e hosting dedicato",
+        "Supporto e manutenzione: Aggiornamenti, assistenza e sicurezza"
+      ],
+      popular: false,
+      ctaText: "Specializzato"
+    }
+  ];
+
+  const graphicsPlans = [
+    {
+      id: "grafica",
+      name: "Grafica",
+      price: "59,90",
+      period: "mese",
+      category: "Grafica",
+      description: "Servizio di grafica personalizzata per le tue esigenze",
+      features: [
+        "2 grafiche personalizzate a settimana"
+      ],
+      popular: false,
+      ctaText: "Scegli Grafica"
+    }
+  ];
+
+
+  const [activeCategory, setActiveCategory] = useState('Social');
+  const categories = ['Social', 'Web', 'Grafica'];
+
+  const getPlansForCategory = (category: string) => {
+    switch (category) {
+      case 'Social': return socialPlans;
+      case 'Web': return webPlans;
+      case 'Grafica': return graphicsPlans;
+      default: return socialPlans;
+    }
+  };
 
   const containerVariants = {
     hidden: {},
@@ -89,19 +260,40 @@ export default function Pricing() {
     <section id="prezzi" className="py-20 bg-white" ref={ref}>
       <div className="container mx-auto px-6">
         <motion.div 
-          className="text-center max-w-3xl mx-auto"
+          className="text-center max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl font-bold text-gray-900">I Nostri Prezzi</h2>
+          <h2 className="text-3xl font-bold text-gray-900">I Nostri Servizi</h2>
           <motion.div 
             className="w-20 h-1 bg-purple-600 mt-2 mb-4 mx-auto"
             initial={{ width: 0 }}
             animate={isInView ? { width: 80 } : { width: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           ></motion.div>
-          <p className="text-gray-600">Scegli il piano perfetto per le tue esigenze digitali</p>
+          <p className="text-gray-600 mb-8">Scopri i nostri pacchetti personalizzati per la tua presenza digitale</p>
+          
+          {/* Tabs per categorie */}
+          <div className="flex justify-center mb-8">
+            <div className="bg-gray-100 rounded-full p-1 inline-flex">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setActiveCategory(category)}
+                  className={`px-6 py-3 rounded-full font-semibold transition duration-300 ${
+                    activeCategory === category
+                      ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-lg'
+                      : 'text-gray-600 hover:text-gray-900'
+                  }`}
+                >
+                  {category === 'Social' ? 'Pacchetti Social' : 
+                   category === 'Web' ? 'Pacchetti Web' : 
+                   'Grafica'}
+                </button>
+              ))}
+            </div>
+          </div>
         </motion.div>
 
         <motion.div 
@@ -109,12 +301,13 @@ export default function Pricing() {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
+          key={activeCategory}
         >
-          {pricingPlans.map((plan, index) => (
+          {getPlansForCategory(activeCategory).map((plan, index) => (
             <motion.div
               key={index}
               variants={cardVariants}
-              className={`relative bg-white rounded-2xl shadow-lg p-8 ${
+              className={`relative bg-white rounded-2xl shadow-lg p-8 h-full flex flex-col ${
                 plan.popular 
                   ? 'ring-2 ring-purple-600 transform scale-105' 
                   : 'border border-gray-200'
@@ -143,11 +336,12 @@ export default function Pricing() {
                 <div className="mb-4">
                   <span className="text-4xl font-bold text-purple-600">€{plan.price}</span>
                   <span className="text-gray-600">/{plan.period}</span>
+                  <div className="text-xs text-gray-500">+IVA</div>
                 </div>
                 <p className="text-gray-600 text-sm">{plan.description}</p>
               </div>
 
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-3 mb-8 flex-grow">
                 {plan.features.map((feature, featureIndex) => (
                   <motion.li 
                     key={featureIndex}
@@ -165,8 +359,8 @@ export default function Pricing() {
               </ul>
 
               <motion.a
-                href={`/checkout/${plan.name.toLowerCase()}`}
-                className={`block w-full py-3 px-6 rounded-full font-semibold transition duration-300 text-center ${
+                href={`/checkout/${plan.id}`}
+                className={`block w-full py-3 px-6 rounded-full font-semibold transition duration-300 text-center mt-auto ${
                   plan.popular
                     ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white hover:shadow-lg'
                     : 'bg-gray-100 text-gray-800 hover:bg-gray-200'

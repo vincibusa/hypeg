@@ -7,52 +7,174 @@ import { PayPalScriptProvider, PayPalButtons, usePayPalScriptReducer } from '@pa
 
 // Definizione dei piani disponibili
 const plans = {
-  starter: {
-    id: 'starter',
-    name: 'Starter',
-    price: '299',
-    description: 'Perfetto per piccole attività che vogliono iniziare con la presenza digitale',
+  'a-tutto-meta': {
+    id: 'a-tutto-meta',
+    name: 'A tutto Meta',
+    price: '99,90',
+    period: 'mese',
+    description: 'Gestione completa di Instagram e Facebook per la tua presenza digitale',
     features: [
-      'Sito web responsive (5 pagine)',
-      'Ottimizzazione SEO base',
-      'Gestione social (2 piattaforme)',
-      '3 post a settimana',
-      'Supporto email',
-      'Analytics mensili'
+      'Gestione Pagina Instagram e Facebook',
+      '3 grafiche settimanali personalizzate (uguali per entrambi i canali)',
+      '3 pubblicazioni a settimana + 3 stories',
+      'Grafica personalizzata e copy'
     ]
   },
-  professional: {
-    id: 'professional',
-    name: 'Professional',
-    price: '599',
-    description: 'La soluzione completa per aziende che vogliono crescere online',
+  'a-tutto-meta-20': {
+    id: 'a-tutto-meta-20',
+    name: 'A tutto Meta 2.0',
+    price: '149,90',
+    period: 'mese',
+    description: 'Versione avanzata con campagne pubblicitarie e reporting',
     features: [
-      'Sito web avanzato (10 pagine)',
-      'E-commerce base (fino a 50 prodotti)',
-      'Gestione social (4 piattaforme)',
-      '5 post a settimana + stories',
-      'Campagne pubblicitarie (budget escluso)',
-      'Video promozionali (2/mese)',
-      'Supporto prioritario',
-      'Analytics dettagliati'
+      'Gestione Pagina Instagram e Facebook',
+      '3 grafiche settimanali (uguali per entrambi i canali)',
+      '3 pubblicazioni a settimana + 3 stories',
+      'Grafica personalizzata e copy',
+      'Campagne a pagamento',
+      'Report trimestrale'
     ]
   },
-  enterprise: {
-    id: 'enterprise',
-    name: 'Enterprise',
-    price: '999',
-    description: 'Soluzione su misura per grandi aziende con esigenze specifiche',
+  'linkedin': {
+    id: 'linkedin',
+    name: 'LinkedIn',
+    price: '69,90',
+    period: 'mese',
+    description: 'Gestione professionale della tua presenza LinkedIn',
     features: [
-      'Sito web personalizzato (illimitate)',
-      'E-commerce avanzato (prodotti illimitati)',
-      'Gestione social completa',
-      'Post quotidiani + contenuti premium',
-      'Campagne pubblicitarie avanzate',
-      'Video professionali (4/mese)',
-      'Branding e identità visiva',
-      'Corsi e-learning personalizzati',
-      'Account manager dedicato',
-      'Supporto 24/7'
+      'Gestione Pagina LinkedIn',
+      '2 pubblicazioni a settimana',
+      'Grafica personalizzata e copy'
+    ]
+  },
+  'tiktok': {
+    id: 'tiktok',
+    name: 'TikTok',
+    price: '199,90',
+    period: 'mese',
+    description: 'Gestione e montaggio professionale per TikTok',
+    features: [
+      'Gestione e montaggio',
+      '2 pubblicazioni a settimana'
+    ]
+  },
+  'pack-professionale': {
+    id: 'pack-professionale',
+    name: 'Pack Professionale',
+    price: '499,90',
+    period: 'mese',
+    description: 'Gestione completa di tutti i canali social',
+    features: [
+      'Instagram - Facebook - TikTok - LinkedIn',
+      'Creatività grafica + copy',
+      '5 post + 5 stories a settimana (uguali)',
+      'Pubblicazione',
+      '1 Reel a settimana',
+      '4 video TikTok al mese'
+    ]
+  },
+  'sito-landing': {
+    id: 'sito-landing',
+    name: 'Sito Landing Page',
+    price: '299,90',
+    period: 'anno',
+    description: 'Pagina singola efficace per presentare la tua attività',
+    features: [
+      '1 pagina',
+      'Creazione Sito Efficace + dominio web .it o .com',
+      'Ottimizzazione SEO base: Strutturazione SEO on-page per miglior posizionamento',
+      'Design grafico personalizzato: Realizzazione grafica del sito, responsive design'
+    ]
+  },
+  'sito-standard': {
+    id: 'sito-standard',
+    name: 'Sito Standard',
+    price: '390,90',
+    period: 'anno',
+    description: 'Sito completo fino a 5 pagine per piccole e medie aziende',
+    features: [
+      'Fino a 5 pagine',
+      'Creazione Sito Efficace + dominio web .it o .com',
+      'Ottimizzazione SEO base: Strutturazione SEO on-page per miglior posizionamento',
+      'Design grafico personalizzato: Realizzazione grafica del sito, responsive design'
+    ]
+  },
+  'sito-large': {
+    id: 'sito-large',
+    name: 'Sito Large',
+    price: '799,90',
+    period: 'anno',
+    description: 'Sito professionale fino a 32 pagine per aziende strutturate',
+    features: [
+      'Fino a 32 pagine',
+      'Creazione Sito Efficace + dominio web .it o .com',
+      'Ottimizzazione SEO base: Strutturazione SEO on-page per miglior posizionamento',
+      'Design grafico personalizzato: Realizzazione grafica del sito, responsive design'
+    ]
+  },
+  'e-shop-basic': {
+    id: 'e-shop-basic',
+    name: 'E-shop Basic',
+    price: '999,90',
+    period: 'anno',
+    description: 'E-commerce completo fino a 100 prodotti',
+    features: [
+      'Analisi e consulenza: Definizione requisiti, target e funzionalità richieste',
+      'Design grafico personalizzato: Realizzazione grafica del sito, responsive design',
+      'Sviluppo e implementazione eShop: Creazione della piattaforma e-commerce',
+      'Integrazione sistemi di pagamento: PayPal, carte di credito, altri metodi',
+      'Inserimento prodotti (fino a 100 prodotti): Caricamento dati prodotti, descrizioni e immagini',
+      'Formazione utilizzo CMS: Addestramento all\'uso della piattaforma',
+      'Ottimizzazione SEO base: Strutturazione SEO on-page',
+      'Hosting e dominio',
+      'Manutenzione e supporto'
+    ]
+  },
+  'e-shop-ultra': {
+    id: 'e-shop-ultra',
+    name: 'E-shop Ultra',
+    price: '1499,90',
+    period: 'anno',
+    description: 'E-commerce avanzato fino a 500 prodotti',
+    features: [
+      'Analisi e consulenza: Definizione requisiti, target e funzionalità richieste',
+      'Design grafico personalizzato: Realizzazione grafica del sito, responsive design',
+      'Sviluppo e implementazione eShop: Creazione della piattaforma e-commerce',
+      'Integrazione sistemi di pagamento: PayPal, carte di credito, altri metodi',
+      'Inserimento prodotti (fino a 500 prodotti): Caricamento dati prodotti, descrizioni e immagini',
+      'Formazione utilizzo CMS: Addestramento all\'uso della piattaforma',
+      'Ottimizzazione SEO base: Strutturazione SEO on-page',
+      'Hosting e dominio',
+      'Manutenzione e supporto'
+    ]
+  },
+  'sito-ricettive': {
+    id: 'sito-ricettive',
+    name: 'Sito Strutture Ricettive',
+    price: '1499,90',
+    period: 'anno',
+    description: 'Piattaforma specializzata per hotel, B&B e strutture ricettive',
+    features: [
+      'Analisi e consulenza: Definizione esigenze specifiche e target clienti',
+      'Design personalizzato: Sviluppo piattaforma eCommerce',
+      'Catalogo servizi e prodotti, gestione disponibilità e prenotazioni',
+      'Collegamento con software gestionale della struttura (PMS)',
+      'Sistemi di pagamento sicuri: PayPal, carte di credito, bonifico',
+      'Inserimento contenuti e prodotti: Caricamento pacchetti, servizi, descrizioni',
+      'Formazione gestione piattaforma: Training per gestione ordini, disponibilità, offerte',
+      'Ottimizzazione SEO base: Ottimizzazione per motori di ricerca e visibilità locale',
+      'Hosting e dominio (12 mesi): Registrazione dominio e hosting dedicato',
+      'Supporto e manutenzione: Aggiornamenti, assistenza e sicurezza'
+    ]
+  },
+  'grafica': {
+    id: 'grafica',
+    name: 'Grafica',
+    price: '59,90',
+    period: 'mese',
+    description: 'Servizio di grafica personalizzata per le tue esigenze',
+    features: [
+      '2 grafiche personalizzate a settimana'
     ]
   }
 };
@@ -222,7 +344,8 @@ export default function CheckoutPage() {
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Piano {selectedPlan.name}</h2>
             <div className="mb-6">
               <span className="text-4xl font-bold text-purple-600">€{selectedPlan.price}</span>
-              <span className="text-gray-600">/mese</span>
+              <span className="text-gray-600">/{selectedPlan.period}</span>
+              <div className="text-sm text-gray-500">+IVA</div>
             </div>
             <p className="text-gray-600 mb-6">{selectedPlan.description}</p>
             
@@ -274,12 +397,12 @@ export default function CheckoutPage() {
             <div className="bg-gray-50 rounded-lg p-4 mb-6">
               <div className="flex justify-between items-center">
                 <span className="text-gray-600">Piano {selectedPlan.name}</span>
-                <span className="font-semibold">€{selectedPlan.price}/mese</span>
+                <span className="font-semibold">€{selectedPlan.price}/{selectedPlan.period} +IVA</span>
               </div>
               <div className="border-t border-gray-200 mt-2 pt-2">
                 <div className="flex justify-between items-center font-bold">
                   <span>Totale</span>
-                  <span className="text-purple-600">€{selectedPlan.price}</span>
+                  <span className="text-purple-600">€{selectedPlan.price} +IVA</span>
                 </div>
               </div>
             </div>
