@@ -1,18 +1,6 @@
 @import "tailwindcss";
 
 :root {
-  --bg-primary: #ffffff;
-  --bg-secondary: #f9fafb;
-  --text-primary: #1f2937;
-  --text-secondary: #6b7280;
-  --border-primary: #e5e7eb;
-  --accent-primary: #8b5cf6;
-  --accent-secondary: #7c3aed;
-  --card-bg: #ffffff;
-  --card-border: #e5e7eb;
-}
-
-[data-theme="dark"] {
   --bg-primary: #111827;
   --bg-secondary: #1f2937;
   --text-primary: #f9fafb;
