@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import Image from 'next/image';
 
 export default function Services() {
   const ref = useRef(null);
@@ -16,8 +17,9 @@ export default function Services() {
         </svg>
       ),
       title: "Siti Web & eCommerce",
-      description: "Realizziamo siti su misura, belli da vedere e facili da usare. Che tu voglia un sito vetrina o un eCommerce, pensiamo a tutto: design, sviluppo, SEO e mobile responsiveness.",
-      technologies: "Tecnologie: WordPress, Shopify, HTML/CSS custom"
+      description: "Realizziamo siti web professionali, e-commerce e portali aziendali ottimizzati SEO, responsive e veloci. Creiamo siti su misura per far crescere il tuo business online con design moderno e funzionalità avanzate.",
+      technologies: "WordPress, Shopify, Next.js, SEO ottimizzato",
+      image: "/images/services/web-development.jpg"
     },
     {
       icon: (
@@ -25,9 +27,10 @@ export default function Services() {
           <path strokeLinecap="round" strokeLinejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
         </svg>
       ),
-      title: "Gestione Social Media",
-      description: "Diamo voce al tuo brand sui social con contenuti creativi, piani editoriali mirati e campagne pubblicitarie efficaci.",
-      technologies: "Instagram, Facebook, TikTok, Linkedin"
+      title: "Social Media Management",
+      description: "Gestiamo i tuoi profili social per far crescere il tuo brand. Contenuti creativi, strategie mirate e campagne pubblicitarie efficaci su Instagram, Facebook, TikTok e LinkedIn per aumentare engagement e conversioni.",
+      technologies: "Instagram, Facebook, TikTok, LinkedIn, Meta Ads",
+      image: "/images/services/social-media.jpg"
     },
     {
       icon: (
@@ -37,8 +40,9 @@ export default function Services() {
         </svg>
       ),
       title: "Video & Foto Making",
-      description: "Dallo shooting al montaggio, raccontiamo la tua attività con immagini e video capaci di emozionare e coinvolgere.",
-      technologies: null
+      description: "Realizziamo video aziendali, spot pubblicitari e contenuti visual per social media. Dallo shooting al montaggio, raccontiamo la tua attività con immagini e video capaci di emozionare e coinvolgere il tuo pubblico.",
+      technologies: "Video editing, Motion graphics, Fotografia aziendale",
+      image: "/images/services/video-production.jpg"
     },
     {
       icon: (
@@ -47,8 +51,9 @@ export default function Services() {
         </svg>
       ),
       title: "Grafica & Branding",
-      description: "Costruiamo o rinnoviamo l'immagine del tuo brand: logo, identità visiva, grafiche per social e materiali di comunicazione.",
-      technologies: null
+      description: "Costruiamo o rinnoviamo l'immagine del tuo brand con loghi, identità visive, brochure e materiali di comunicazione. Creiamo un'identità visiva forte e coerente che rende unico il tuo brand.",
+      technologies: "Logo design, Brand identity, Grafica stampa e digital",
+      image: "/images/services/branding.jpg"
     },
     {
       icon: (
@@ -57,8 +62,9 @@ export default function Services() {
         </svg>
       ),
       title: "E-learning & Formazione Online",
-      description: "Progettiamo corsi online personalizzati, per privati e aziende.",
-      technologies: null
+      description: "Progettiamo piattaforme e-learning e corsi online personalizzati. Formazione digitale, webinar interattivi e contenuti didattici multimediali per far crescere le competenze del tuo team e della tua azienda.",
+      technologies: "Piattaforme LMS, Contenuti interattivi, Webinar",
+      image: "/images/services/elearning.jpg"
     }
   ];
 
@@ -77,22 +83,31 @@ export default function Services() {
   };
 
   return (
-    <section id="servizi" className="py-20" ref={ref}>
-      <div className="container mx-auto px-6">
+    <section id="servizi" className="relative py-20 overflow-hidden" ref={ref}>
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 z-0 opacity-30">
+        <div className="absolute top-10 right-10 w-32 h-32 bg-gradient-to-br from-purple-500/20 to-indigo-600/20 rounded-full blur-xl"></div>
+        <div className="absolute bottom-20 left-10 w-48 h-48 bg-gradient-to-br from-indigo-500/15 to-purple-600/15 rounded-full blur-2xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-purple-400/10 to-indigo-400/10 rounded-full blur-3xl"></div>
+      </div>
+      
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div 
           className="text-center max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl font-bold text-[var(--text-primary)]">I Nostri Servizi</h2>
+          <h2 className="text-3xl font-bold text-[var(--text-primary)]">Servizi di Comunicazione Digitale a Palermo</h2>
           <motion.div 
             className="w-20 h-1 bg-purple-600 mt-2 mb-4 mx-auto"
             initial={{ width: 0 }}
             animate={isInView ? { width: 80 } : { width: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           ></motion.div>
-          <p className="text-[var(--text-secondary)]">Soluzioni digitali complete per far crescere il tuo business</p>
+          <p className="text-[var(--text-secondary)]">
+            <strong>HipeG</strong> offre servizi completi di marketing digitale per aziende a <strong>Palermo</strong>, <strong>Sicilia</strong> e tutta <strong>Italia</strong>. Dalla creazione di siti web al social media management, dal video marketing alla grafica pubblicitaria.
+          </p>
         </motion.div>
 
         <motion.div 
@@ -109,27 +124,41 @@ export default function Services() {
             <motion.div
               key={index}
               variants={cardVariants}
-              className="bg-[var(--card-bg)] p-8 rounded-xl shadow-lg border border-[var(--card-border)]"
+              className="bg-[var(--card-bg)] rounded-xl shadow-lg border border-[var(--card-border)] overflow-hidden"
               whileHover={{
                 y: -10,
                 boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
               }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
-              <motion.div 
-                className="text-purple-600 mb-4"
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
-              >
-                {service.icon}
-              </motion.div>
-              <h3 className="text-xl font-bold mb-2 text-[var(--text-primary)]">{service.title}</h3>
-              <p className="text-[var(--text-secondary)]">
-                {service.description}
-                {service.technologies && (
-                  <small className="text-[var(--text-secondary)] opacity-75 mt-2 block">{service.technologies}</small>
-                )}
-              </p>
+              {/* Image header */}
+              <div className="relative h-48 w-full overflow-hidden">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="object-cover transition-transform duration-300 hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <motion.div 
+                  className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm p-2 rounded-lg text-white"
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
+                  {service.icon}
+                </motion.div>
+              </div>
+              
+              {/* Content */}
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-3 text-[var(--text-primary)]">{service.title}</h3>
+                <p className="text-[var(--text-secondary)] leading-relaxed">
+                  {service.description}
+                  {service.technologies && (
+                    <small className="text-[var(--accent-primary)] opacity-90 mt-3 block font-medium">{service.technologies}</small>
+                  )}
+                </p>
+              </div>
             </motion.div>
           ))}
         </motion.div>

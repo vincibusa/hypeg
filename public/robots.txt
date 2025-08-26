@@ -1,0 +1,31 @@
+# HipeG - Agenzia Comunicazione Digitale Palermo
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://hypeg.it/sitemap.xml
+
+# Crawl delay per essere gentili con i server
+Crawl-delay: 1
+
+# Blocchiamo alcune directory comuni di Next.js che non servono ai bot
+Disallow: /_next/static/
+Disallow: /api/
+Disallow: *.json$
+
+# Permettiamo l'accesso alle immagini
+Allow: /images/
+Allow: /*.jpg$
+Allow: /*.png$
+Allow: /*.svg$
+Allow: /*.webp$
+
+# Per i social media bots
+User-agent: facebookexternalhit/1.1
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /

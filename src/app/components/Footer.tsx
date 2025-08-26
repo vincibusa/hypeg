@@ -1,10 +1,28 @@
+'use client';
+
 export default function Footer() {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
   return (
     <footer className="bg-[var(--bg-secondary)] text-[var(--text-secondary)] py-16">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <a href="#" className="text-2xl font-bold text-[var(--text-primary)] mb-4 block">
+            <a 
+              href="#home" 
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('home');
+              }}
+              className="text-2xl font-bold text-[var(--text-primary)] mb-4 block hover:text-[var(--accent-primary)] transition duration-300"
+            >
               HipeG
             </a>
             <p className="text-[var(--text-secondary)] mb-4">
@@ -39,22 +57,50 @@ export default function Footer() {
             <div className="w-10 h-0.5 bg-purple-500 mb-4"></div>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="hover:text-[var(--text-primary)] transition duration-300">
+                <a 
+                  href="#home" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('home');
+                  }}
+                  className="hover:text-[var(--text-primary)] transition duration-300"
+                >
                   Home
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-[var(--text-primary)] transition duration-300">
+                <a 
+                  href="#chi-siamo" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('chi-siamo');
+                  }}
+                  className="hover:text-[var(--text-primary)] transition duration-300"
+                >
                   Chi Siamo
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-[var(--text-primary)] transition duration-300">
+                <a 
+                  href="#servizi" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('servizi');
+                  }}
+                  className="hover:text-[var(--text-primary)] transition duration-300"
+                >
                   Servizi
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-[var(--text-primary)] transition duration-300">
+                <a 
+                  href="#contatti" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('contatti');
+                  }}
+                  className="hover:text-[var(--text-primary)] transition duration-300"
+                >
                   Contatti
                 </a>
               </li>
@@ -66,27 +112,62 @@ export default function Footer() {
             <div className="w-10 h-0.5 bg-purple-500 mb-4"></div>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="hover:text-[var(--text-primary)] transition duration-300">
+                <a 
+                  href="#servizi" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('servizi');
+                  }}
+                  className="hover:text-[var(--text-primary)] transition duration-300"
+                >
                   Siti Web & eCommerce
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-[var(--text-primary)] transition duration-300">
+                <a 
+                  href="#servizi" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('servizi');
+                  }}
+                  className="hover:text-[var(--text-primary)] transition duration-300"
+                >
                   Gestione Social Media
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-[var(--text-primary)] transition duration-300">
+                <a 
+                  href="#servizi" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('servizi');
+                  }}
+                  className="hover:text-[var(--text-primary)] transition duration-300"
+                >
                   Video & Foto Making
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-[var(--text-primary)] transition duration-300">
+                <a 
+                  href="#servizi" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('servizi');
+                  }}
+                  className="hover:text-[var(--text-primary)] transition duration-300"
+                >
                   Grafica & Branding
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-[var(--text-primary)] transition duration-300">
+                <a 
+                  href="#servizi" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('servizi');
+                  }}
+                  className="hover:text-[var(--text-primary)] transition duration-300"
+                >
                   E-learning & Formazione
                 </a>
               </li>
@@ -97,9 +178,9 @@ export default function Footer() {
             <h4 className="text-[var(--text-primary)] font-semibold mb-4">Contatti</h4>
             <div className="w-10 h-0.5 bg-purple-500 mb-4"></div>
             <ul className="space-y-2 text-[var(--text-secondary)]">
-              <li>Via Roma 123, Milano</li>
-              <li>info@hipeg.it</li>
-              <li>+39 02 1234567</li>
+              <li>Via Antonio Daneu 30, Palermo</li>
+              <li>commerciale@pubbliworks.it</li>
+              <li>+39 349 385 0703</li>
             </ul>
           </div>
         </div>

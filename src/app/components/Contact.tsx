@@ -1,12 +1,38 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useMemo, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
+import dynamic from 'next/dynamic';
+
+// Dynamic import for Leaflet components to avoid SSR issues
+const MapContainer = dynamic(() => import('react-leaflet').then(mod => mod.MapContainer), { ssr: false });
+const TileLayer = dynamic(() => import('react-leaflet').then(mod => mod.TileLayer), { ssr: false });
+const Marker = dynamic(() => import('react-leaflet').then(mod => mod.Marker), { ssr: false });
+const Popup = dynamic(() => import('react-leaflet').then(mod => mod.Popup), { ssr: false });
 
 export default function Contact() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  // Exact coordinates for Via Antonio Daneu, Palermo
+  const position = useMemo(() => [38.1406359, 13.3618609] as [number, number], []);
+
+  // Fix for default markers in React Leaflet - only run on client side
+  useEffect(() => {
+    const fixMarkerIcons = async () => {
+      if (typeof window !== 'undefined') {
+        const L = (await import('leaflet')).default;
+        delete (L.Icon.Default.prototype as any)._getIconUrl;
+        L.Icon.Default.mergeOptions({
+          iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',
+          iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',
+          shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+        });
+      }
+    };
+    fixMarkerIcons();
+  }, []);
   
   const [formData, setFormData] = useState({
     name: '',
@@ -47,22 +73,31 @@ export default function Contact() {
   };
 
   return (
-    <section id="contatti" className="bg-[var(--bg-secondary)] py-20" ref={ref}>
-      <div className="container mx-auto px-6">
+    <section id="contatti" className="relative bg-[var(--bg-secondary)] py-20 overflow-hidden" ref={ref}>
+      {/* Background pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-purple-600 to-indigo-600"></div>
+        <div className="absolute top-10 right-20 w-64 h-64 bg-white rounded-full blur-3xl opacity-10"></div>
+        <div className="absolute bottom-20 left-32 w-40 h-40 bg-white rounded-full blur-2xl opacity-15"></div>
+      </div>
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div 
           className="text-center max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl font-bold text-[var(--text-primary)]">Contattaci</h2>
+          <h2 className="text-3xl font-bold text-[var(--text-primary)]">Contatta la Tua Agenzia di Comunicazione a Palermo</h2>
           <motion.div 
             className="w-20 h-1 bg-purple-600 mt-2 mb-4 mx-auto"
             initial={{ width: 0 }}
             animate={isInView ? { width: 80 } : { width: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           ></motion.div>
-          <p className="text-[var(--text-secondary)]">Hai un progetto in mente? Parliamone!</p>
+          <p className="text-[var(--text-secondary)]">
+            Hai un progetto in mente? <strong>HipeG</strong> è la tua <strong>agenzia di comunicazione digitale a Palermo</strong>. 
+            Contattaci per un preventivo gratuito sui nostri servizi di <strong>web design</strong>, <strong>social media management</strong> e marketing digitale in <strong>Sicilia</strong>.
+          </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 mt-12">
@@ -175,7 +210,7 @@ export default function Contact() {
                     </svg>
                   ),
                   title: "Indirizzo",
-                  content: "Via Roma 123, 20100 Milano, Italia"
+                  content: "Via Antonio Daneu 30, 90142 Palermo, Italia"
                 },
                 {
                   icon: (
@@ -184,7 +219,7 @@ export default function Contact() {
                     </svg>
                   ),
                   title: "Email",
-                  content: "info@hipeg.it"
+                  content: "commerciale@pubbliworks.it"
                 },
                 {
                   icon: (
@@ -193,7 +228,7 @@ export default function Contact() {
                     </svg>
                   ),
                   title: "Telefono",
-                  content: "+39 02 1234567"
+                  content: "+39 349 385 0703"
                 }
               ].map((item, index) => (
                 <motion.div 
@@ -219,13 +254,32 @@ export default function Contact() {
             </motion.div>
 
             <motion.div 
-              className="mt-8 bg-[var(--bg-secondary)] h-80 rounded-lg flex items-center justify-center text-[var(--text-secondary)]"
+              className="mt-8 h-80 rounded-lg overflow-hidden shadow-lg border border-[var(--card-border)]"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.6, delay: 0.8 }}
               whileHover={{ scale: 1.02 }}
             >
-              Mappa Google
+              <MapContainer
+                center={position}
+                zoom={15}
+                style={{ height: '100%', width: '100%' }}
+                className="z-0"
+              >
+                <TileLayer
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                />
+                <Marker position={position}>
+                  <Popup>
+                    <div className="text-center">
+                      <strong>HipeG</strong><br />
+                      Via Antonio Daneu 30<br />
+                      90142 Palermo, Italia
+                    </div>
+                  </Popup>
+                </Marker>
+              </MapContainer>
             </motion.div>
           </motion.div>
         </div>

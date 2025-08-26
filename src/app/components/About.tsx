@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import Image from 'next/image';
 
 export default function About() {
   const ref = useRef(null);
@@ -23,7 +24,7 @@ export default function About() {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              Chi Siamo
+              La Tua Agenzia di Comunicazione a Palermo
             </motion.h2>
             <motion.div 
               className="w-20 h-1 bg-purple-600 mt-2 mb-6"
@@ -37,7 +38,9 @@ export default function About() {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              Crediamo nelle idee che funzionano, nella bellezza che comunica e nelle storie che lasciano il segno. Dalla strategia alla produzione, dalla grafica al video, dal sito web alla gestione dei social: costruiamo progetti digitali su misura, per far crescere la tua presenza online e trasformare la tua visione in realtà.
+              <strong>HipeG</strong> è un'<strong>agenzia di comunicazione digitale</strong> con sede a <strong>Palermo</strong> che serve clienti in tutta la <strong>Sicilia</strong> e <strong>Italia</strong>. Siamo specializzati nella <strong>creazione di siti web</strong>, nel <strong>social media management</strong>, nel video marketing e nella grafica pubblicitaria. 
+              <br /><br />
+              Il nostro team di <strong>social media manager</strong> e web designer lavora con passione per far crescere la presenza online delle aziende siciliane, trasformando idee creative in risultati concreti attraverso strategie digitali su misura.
             </motion.p>
             <motion.div 
               className="mt-8"
@@ -65,11 +68,66 @@ export default function About() {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           >
-            <motion.div 
-              className="w-72 h-72 lg:w-96 lg:h-96 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full shadow-2xl"
-              animate={isInView ? { rotate: 360 } : { rotate: 0 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            ></motion.div>
+            <div className="relative w-80 h-80 lg:w-96 lg:h-96">
+              <motion.div 
+                className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Image
+                  src="/images/about/team-work.jpg"
+                  alt="Team collaboration and creative work"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-purple-600/30 to-indigo-600/20"></div>
+              </motion.div>
+              
+              {/* Floating accent image */}
+              <motion.div 
+                className="absolute -bottom-6 -right-6 w-32 h-32 rounded-xl overflow-hidden shadow-xl"
+                initial={{ opacity: 0, scale: 0 }}
+                animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                whileHover={{ scale: 1.1 }}
+              >
+                <Image
+                  src="/images/about/creative-workspace.jpg"
+                  alt="Creative workspace"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/40 to-purple-600/40"></div>
+              </motion.div>
+              
+              {/* Decorative elements */}
+              <motion.div 
+                className="absolute -top-4 -left-4 w-8 h-8 bg-purple-500 rounded-full opacity-80"
+                animate={{ 
+                  scale: [1, 1.2, 1],
+                  opacity: [0.8, 1, 0.8]
+                }}
+                transition={{ 
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              ></motion.div>
+              
+              <motion.div 
+                className="absolute -top-2 -right-8 w-4 h-4 bg-indigo-500 rounded-full opacity-60"
+                animate={{ 
+                  y: [0, -10, 0],
+                  opacity: [0.6, 1, 0.6]
+                }}
+                transition={{ 
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 1
+                }}
+              ></motion.div>
+            </div>
           </motion.div>
         </div>
       </div>

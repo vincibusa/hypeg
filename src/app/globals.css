@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
 
 :root {
   --bg-primary: #111827;
@@ -28,4 +29,25 @@ body {
 /* Improve scroll padding for fixed header */
 section {
   scroll-margin-top: 80px;
+}
+
+/* Leaflet custom styles for dark theme */
+.leaflet-container {
+  background: var(--bg-secondary);
+}
+
+.leaflet-popup-content-wrapper {
+  background: var(--card-bg);
+  color: var(--text-primary);
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.leaflet-popup-tip {
+  background: var(--card-bg);
+}
+
+.leaflet-control-attribution {
+  background: rgba(var(--bg-primary), 0.8);
+  color: var(--text-secondary);
 }
