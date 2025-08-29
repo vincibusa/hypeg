@@ -6,26 +6,53 @@ import { motion, AnimatePresence } from 'framer-motion';
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const scrollToSection = (sectionId: string) => {
+  const handleNavigation = (item: typeof menuItems[0]) => {
     // Chiudi il menu immediatamente
     setIsMenuOpen(false);
     
-    // Aspetta che l'animazione del menu finisca prima di scrollare
-    setTimeout(() => {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ 
-          behavior: 'smooth',
-          block: 'start'
-        });
+    // Se è un link esterno (come /temi), naviga direttamente
+    if (item.href.startsWith('/') && !item.href.startsWith('/#')) {
+      window.location.href = item.href;
+      return;
+    }
+    
+    // Se è un anchor link, verifica se siamo sulla home
+    if (item.href.startsWith('/#')) {
+      const sectionId = item.href.substring(2); // rimuovi "/#"
+      
+      // Se siamo già sulla home page, fai scroll
+      if (window.location.pathname === '/') {
+        setTimeout(() => {
+          const element = document.getElementById(sectionId);
+          if (element) {
+            element.scrollIntoView({ 
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }, 100);
+      } else {
+        // Se siamo su un'altra pagina, naviga alla home con anchor
+        window.location.href = item.href;
       }
-    }, 100);
+      return;
+    }
+    
+    // Per la home, naviga o scrolla a seconda di dove siamo
+    if (item.id === 'home') {
+      if (window.location.pathname === '/') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        window.location.href = '/';
+      }
+    }
   };
 
   const menuItems = [
     { 
       name: 'Home', 
       id: 'home',
+      href: '/',
       icon: (
         <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
@@ -35,6 +62,7 @@ export default function Header() {
     { 
       name: 'Chi Siamo', 
       id: 'chi-siamo',
+      href: '/#chi-siamo',
       icon: (
         <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -44,6 +72,17 @@ export default function Header() {
     { 
       name: 'Servizi', 
       id: 'servizi',
+      href: '/#servizi',
+      icon: (
+        <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+        </svg>
+      )
+    },
+    { 
+      name: 'Temi', 
+      id: 'temi',
+      href: '/temi',
       icon: (
         <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
@@ -53,6 +92,7 @@ export default function Header() {
     { 
       name: 'Prezzi', 
       id: 'prezzi',
+      href: '/#prezzi',
       icon: (
         <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -62,6 +102,7 @@ export default function Header() {
     { 
       name: 'Contatti', 
       id: 'contatti',
+      href: '/#contatti',
       icon: (
         <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -107,10 +148,10 @@ export default function Header() {
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         <motion.a 
-          href="#home"
+          href="/"
           onClick={(e) => {
             e.preventDefault();
-            scrollToSection('home');
+            handleNavigation({ name: 'Home', id: 'home', href: '/', icon: <></> });
           }}
           className="text-2xl font-bold"
           initial={{ scale: 0 }}
@@ -132,10 +173,10 @@ export default function Header() {
           {menuItems.map((item, index) => (
             <motion.a
               key={item.id}
-              href={`#${item.id}`}
+              href={item.href}
               onClick={(e) => {
                 e.preventDefault();
-                scrollToSection(item.id);
+                handleNavigation(item);
               }}
               className="text-[var(--text-secondary)] hover:text-[var(--accent-primary)] transition duration-300 relative"
               initial={{ opacity: 0, y: -20 }}
@@ -194,10 +235,10 @@ export default function Header() {
               {menuItems.map((item, index) => (
                 <motion.a
                   key={item.id}
-                  href={`#${item.id}`}
+                  href={item.href}
                   onClick={(e) => {
                     e.preventDefault();
-                    scrollToSection(item.id);
+                    handleNavigation(item);
                   }}
                   className="flex items-center space-x-3 p-3 rounded-lg text-[var(--text-primary)] hover:text-[var(--accent-primary)] hover:bg-[var(--bg-secondary)] transition-all duration-300"
                   variants={linkVariants}
