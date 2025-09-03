@@ -34,71 +34,22 @@ const themes: Theme[] = [
     name: 'Portfolio X',
     description: 'Mostra il tuo lavoro con questo tema creativo per portfolio con gallerie interattive.',
     category: 'Portfolio',
-    technologies: ['Next.js', 'TypeScript', 'Framer Motion'],
-    image: '/images/services/branding.jpg',
-    demoUrl: '#',
+    technologies: ['Next.Js', 'Typescript', 'Tailwind', 'Framer Motion'],
+    image: '/images/themes/portfolio.png',
+    demoUrl: 'https://portfolio-template-dusky-nu.vercel.app/',
     featured: true
   },
   {
     id: '3',
-    name: 'Shopify Max',
-    description: 'Inizia a vendere online con questo potente tema e-commerce ottimizzato per conversioni.',
-    category: 'E-commerce',
-    technologies: ['Shopify', 'React', 'Stripe'],
-    image: '/images/services/social-media.jpg',
-    demoUrl: '#',
-    featured: false
-  },
-  {
-    id: '4',
-    name: 'Blog Central',
-    description: 'Condividi le tue storie con questo coinvolgente tema per blog con design responsive.',
-    category: 'Blog',
-    technologies: ['Next.js', 'MDX', 'Contentful'],
-    image: '/images/services/video-production.jpg',
-    demoUrl: '#',
-    featured: false
-  },
-  {
-    id: '5',
-    name: 'Restaurant Deluxe',
+    name: 'Restaurant Template',
     description: 'Template per ristoranti con menu interattivo e sistema prenotazioni integrato.',
-    category: 'Corporate',
-    technologies: ['WordPress', 'WooCommerce', 'OpenTable API'],
-    image: '/images/services/elearning.jpg',
-    demoUrl: '#',
-    featured: true
-  },
-  {
-    id: '6',
-    name: 'Tech Startup',
-    description: 'Landing page moderna per startup tecnologiche con design innovativo e conversion-focused.',
     category: 'Landing Page',
-    technologies: ['React', 'Tailwind CSS', 'Vercel'],
-    image: '/images/hero/digital-workspace.jpg',
-    demoUrl: '#',
+    technologies: ['Next.Js', 'Typescript', 'Tailwind', 'Framer Motion'],
+    image: '/images/themes/restaurant.png',
+    demoUrl: 'https://rest-template-six.vercel.app/',
     featured: false
   },
-  {
-    id: '7',
-    name: 'Creative Agency',
-    description: 'Tema perfetto per agenzie creative con portfolio dinamico e animazioni fluide.',
-    category: 'Portfolio',
-    technologies: ['Next.js', 'Framer Motion', 'Sanity'],
-    image: '/images/backgrounds/tech-pattern.jpg',
-    demoUrl: '#',
-    featured: false
-  },
-  {
-    id: '8',
-    name: 'E-learning Pro',
-    description: 'Piattaforma educativa completa con corsi online, quiz interattivi e progress tracking.',
-    category: 'Corporate',
-    technologies: ['React', 'Node.js', 'MongoDB'],
-    image: '/images/about/team-work.jpg',
-    demoUrl: '#',
-    featured: false
-  }
+  
 ];
 
 function ThemeCard({ theme, index }: { theme: Theme; index: number }) {
