@@ -217,42 +217,54 @@ export default function CheckoutPage() {
     'enable-funding': 'paypal'
   };
 
-  const createOrder = async () => {
+  const createOrder = (_data: any, actions: any) => {
+    const normalizedAmount = selectedPlan.price.replace(',', '.');
+    
+    return actions.order.create({
+      purchase_units: [
+        {
+          reference_id: `HIPEG_${selectedPlan.id.toUpperCase()}_${Date.now()}`,
+          description: `HipeG - ${selectedPlan.name} - Comunicazione Digitale`,
+          custom_id: selectedPlan.id,
+          amount: {
+            currency_code: 'EUR',
+            value: normalizedAmount,
+          },
+        },
+      ],
+      application_context: {
+        brand_name: 'HipeG Creative Company',
+        landing_page: 'NO_PREFERENCE',
+        shipping_preference: 'NO_SHIPPING',
+        user_action: 'PAY_NOW',
+      },
+    });
+  };
+
+  const onApprove = async (data: any, actions: any) => {
     setLoading(true);
     setError(null);
 
     try {
-      const response = await fetch('/api/paypal/create-order', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          planId: selectedPlan.id,
-          amount: selectedPlan.price,
-          currency: 'EUR'
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Errore nella creazione dell\'ordine');
-      }
-
-      const data = await response.json();
-      return data.id;
-    } catch (error) {
-      console.error('Errore creazione ordine:', error);
-      setError('Errore nella creazione dell\'ordine. Riprova.');
-      throw error;
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const onApprove = async (data: any) => {
-    setLoading(true);
-
-    try {
+      // Ottieni i dettagli dell'ordine da PayPal
+      const order = await actions.order.get();
+      console.log('Payment approved:', order);
+      
+      // Estrai informazioni del pagatore
+      const payerName = order.payer?.name?.given_name || '';
+      const payerEmail = order.payer?.email_address || '';
+      
+      const paymentData = {
+        name: payerName,
+        email: payerEmail,
+        amount: selectedPlan.price.replace(',', '.'),
+        orderID: data.orderID,
+        planId: selectedPlan.id
+      };
+      
+      console.log('Sending payment data to capture API:', paymentData);
+      
+      // Cattura il pagamento tramite la nostra API
       const response = await fetch('/api/paypal/capture-order', {
         method: 'POST',
         headers: {
@@ -264,6 +276,8 @@ export default function CheckoutPage() {
       });
 
       if (!response.ok) {
+        const errorText = await response.text();
+        console.error('API error response:', errorText);
         throw new Error('Errore nella cattura del pagamento');
       }
 
@@ -273,8 +287,8 @@ export default function CheckoutPage() {
       // Redirect alla pagina di successo
       window.location.href = `/checkout/success?orderID=${data.orderID}&planId=${selectedPlan.id}`;
     } catch (error) {
-      console.error('Errore cattura pagamento:', error);
-      setError('Errore nel completamento del pagamento. Contatta il supporto.');
+      console.error('Payment failed:', error);
+      setError('Errore nel completamento del pagamento. Riprova o contatta il supporto.');
     } finally {
       setLoading(false);
     }

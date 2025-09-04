@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 
 const PAYPAL_CLIENT_ID = process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID;
 const PAYPAL_CLIENT_SECRET = process.env.PAYPAL_CLIENT_SECRET;
-const PAYPAL_BASE_URL = process.env.PAYPAL_BASE_URL || 'https://api.sandbox.paypal.com';
+const PAYPAL_BASE_URL = process.env.PAYPAL_BASE_URL || 'https://api-m.sandbox.paypal.com';
 
 // Funzione per ottenere l'access token PayPal
 async function getPayPalAccessToken(): Promise<string> {
@@ -47,13 +47,24 @@ export async function POST(request: NextRequest) {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${accessToken}`,
         'PayPal-Request-Id': `HIPEG_CAPTURE_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+        'Prefer': 'return=representation'
       },
     });
 
     if (!response.ok) {
-      const errorData = await response.json();
-      console.error('PayPal capture failed:', errorData);
-      throw new Error('Failed to capture PayPal payment');
+      const errorText = await response.text();
+      let errorData;
+      try {
+        errorData = JSON.parse(errorText);
+      } catch {
+        errorData = { message: errorText };
+      }
+      console.error('PayPal capture failed:', {
+        status: response.status,
+        statusText: response.statusText,
+        error: errorData
+      });
+      throw new Error(`PayPal capture failed: ${response.status} ${response.statusText}`);
     }
 
     const captureData = await response.json();
