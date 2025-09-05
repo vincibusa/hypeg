@@ -1,0 +1,32 @@
+rules_version='2'
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Subscription Plans - pubblici per tutti (read-only)
+    match /subscription_plans/{planId} {
+      allow read: if true;
+      allow write: if false; // Solo admin via server-side
+    }
+    
+    // Customers - accesso limitato (per ora permissivo per sviluppo)
+    match /customers/{customerId} {
+      allow read, write: if true; // TODO: implementare auth
+    }
+    
+    // Subscriptions - accesso limitato (per ora permissivo per sviluppo)  
+    match /subscriptions/{subscriptionId} {
+      allow read, write: if true; // TODO: implementare auth
+    }
+    
+    // Subscription Payments - accesso limitato (per ora permissivo per sviluppo)
+    match /subscription_payments/{paymentId} {
+      allow read, write: if true; // TODO: implementare auth
+    }
+    
+    // Blocca tutto il resto
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

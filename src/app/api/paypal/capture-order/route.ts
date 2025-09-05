@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { createSubscriptionPayment, createCustomer, getCustomerByEmail } from '@/lib/firestore';
 
 const PAYPAL_CLIENT_ID = process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID;
 const PAYPAL_CLIENT_SECRET = process.env.PAYPAL_CLIENT_SECRET;
@@ -79,8 +80,44 @@ export async function POST(request: NextRequest) {
       throw new Error('Payment was not completed successfully');
     }
 
-    // Log del pagamento riuscito (in produzione potresti salvare su database)
-    console.log('Payment completed successfully:', {
+    // Salva il pagamento nel database
+    let customerId: string | undefined;
+    const payerEmail = captureData.payer?.email_address;
+    
+    if (payerEmail) {
+      // Cerca o crea il customer
+      const existingCustomer = await getCustomerByEmail(payerEmail);
+      
+      if (existingCustomer) {
+        customerId = existingCustomer.id;
+      } else if (captureData.payer?.name) {
+        // Crea nuovo customer
+        customerId = await createCustomer({
+          email: payerEmail,
+          name: `${captureData.payer.name.given_name} ${captureData.payer.name.surname || ''}`.trim()
+        });
+      }
+    }
+
+    // Calcola la data per il reminder (30 giorni dopo)
+    const nextPaymentReminder = new Date();
+    nextPaymentReminder.setDate(nextPaymentReminder.getDate() + 30);
+
+    // Salva il pagamento
+    const paymentId = await createSubscriptionPayment({
+      customer_id: customerId,
+      plan_id: customId || 'unknown',
+      paypal_order_id: orderID,
+      paypal_payment_id: captureData.purchase_units[0].payments.captures[0].id,
+      amount: parseFloat(paymentAmount?.value || '0'),
+      currency: paymentAmount?.currency_code || 'EUR',
+      status: 'COMPLETED',
+      paid_at: new Date(),
+      next_payment_reminder: nextPaymentReminder
+    });
+
+    console.log('Payment saved to database:', {
+      paymentId,
       orderId: orderID,
       captureId: captureData.purchase_units[0].payments.captures[0].id,
       planId: customId,
@@ -89,12 +126,6 @@ export async function POST(request: NextRequest) {
       payerName: `${captureData.payer?.name?.given_name} ${captureData.payer?.name?.surname}`,
       timestamp: new Date().toISOString()
     });
-
-    // Qui potresti:
-    // 1. Salvare la transazione nel database
-    // 2. Inviare email di conferma
-    // 3. Attivare il servizio per il cliente
-    // 4. Integrare con sistemi di billing
 
     return NextResponse.json({
       success: true,

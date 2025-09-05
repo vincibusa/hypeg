@@ -184,21 +184,69 @@ export default function CheckoutPage() {
   const planId = params.planId as string;
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [selectedPlan, setSelectedPlan] = useState<any>(null);
+  const [planLoading, setPlanLoading] = useState(true);
 
-  // Recupera il piano selezionato
-  const selectedPlan = plans[planId as keyof typeof plans];
-
+  // Carica il piano dal database
   useEffect(() => {
-    if (!selectedPlan) {
-      setError('Piano non trovato');
-    }
-  }, [selectedPlan]);
+    const fetchPlan = async () => {
+      try {
+        setPlanLoading(true);
+        const response = await fetch(`/api/plans/${planId}`);
+        const data = await response.json();
+        
+        if (data.success) {
+          setSelectedPlan(data.plan);
+        } else {
+          // Fallback ai dati hardcoded se il piano non è nel database
+          const fallbackPlan = plans[planId as keyof typeof plans];
+          if (fallbackPlan) {
+            setSelectedPlan({
+              ...fallbackPlan,
+              paypal_plan_id: null // Indicatore che non ha plan ID PayPal
+            });
+          } else {
+            setError('Piano non trovato');
+          }
+        }
+      } catch (err) {
+        console.error('Error fetching plan:', err);
+        // Fallback ai dati hardcoded
+        const fallbackPlan = plans[planId as keyof typeof plans];
+        if (fallbackPlan) {
+          setSelectedPlan({
+            ...fallbackPlan,
+            paypal_plan_id: null
+          });
+        } else {
+          setError('Errore nel caricamento del piano');
+        }
+      } finally {
+        setPlanLoading(false);
+      }
+    };
 
-  if (!selectedPlan) {
+    fetchPlan();
+  }, [planId]);
+
+  if (planLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">Piano non trovato</h1>
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-purple-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Caricamento piano...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (!selectedPlan || error) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">
+            {error || 'Piano non trovato'}
+          </h1>
           <p className="text-gray-600 mb-6">Il piano selezionato non esiste.</p>
           <a href="/prezzi" className="text-purple-600 hover:text-purple-700">
             ← Torna ai prezzi
@@ -211,24 +259,27 @@ export default function CheckoutPage() {
   const initialPayPalOptions = {
     clientId: process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID || '',
     currency: 'EUR',
-    intent: 'capture',
+    intent: 'capture', // Always use one-time payments
     components: 'buttons',
     'disable-funding': 'credit,card',
     'enable-funding': 'paypal'
   };
 
+  // Per ora manteniamo createOrder per compatibilità (fallback per piani senza PayPal plan ID)
   const createOrder = (_data: any, actions: any) => {
-    const normalizedAmount = selectedPlan.price.replace(',', '.');
+    const amount = typeof selectedPlan.price === 'number' ? 
+      selectedPlan.price.toString() : 
+      selectedPlan.price.replace(',', '.');
     
     return actions.order.create({
       purchase_units: [
         {
-          reference_id: `HIPEG_${selectedPlan.id.toUpperCase()}_${Date.now()}`,
+          reference_id: `HIPEG_${selectedPlan.name.replace(/\s+/g, '_').toUpperCase()}_${Date.now()}`,
           description: `HipeG - ${selectedPlan.name} - Comunicazione Digitale`,
           custom_id: selectedPlan.id,
           amount: {
-            currency_code: 'EUR',
-            value: normalizedAmount,
+            currency_code: selectedPlan.currency || 'EUR',
+            value: amount,
           },
         },
       ],
@@ -241,53 +292,63 @@ export default function CheckoutPage() {
     });
   };
 
+
   const onApprove = async (data: any, actions: any) => {
     setLoading(true);
     setError(null);
 
     try {
-      // Ottieni i dettagli dell'ordine da PayPal
-      const order = await actions.order.get();
-      console.log('Payment approved:', order);
-      
-      // Estrai informazioni del pagatore
-      const payerName = order.payer?.name?.given_name || '';
-      const payerEmail = order.payer?.email_address || '';
-      
-      const paymentData = {
-        name: payerName,
-        email: payerEmail,
-        amount: selectedPlan.price.replace(',', '.'),
-        orderID: data.orderID,
-        planId: selectedPlan.id
-      };
-      
-      console.log('Sending payment data to capture API:', paymentData);
-      
-      // Cattura il pagamento tramite la nostra API
-      const response = await fetch('/api/paypal/capture-order', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
+      // Gestione pagamento one-time
+      if (data.orderID) {
+        console.log('Order approved:', data.orderID);
+        
+        // Ottieni i dettagli dell'ordine da PayPal
+        const order = await actions.order.get();
+        
+        // Estrai informazioni del pagatore
+        const payerName = order.payer?.name?.given_name || '';
+        const payerEmail = order.payer?.email_address || '';
+        
+        const amount = typeof selectedPlan.price === 'number' ? 
+          selectedPlan.price.toString() : 
+          selectedPlan.price.replace(',', '.');
+        
+        const paymentData = {
+          name: payerName,
+          email: payerEmail,
+          amount: amount,
           orderID: data.orderID,
-        }),
-      });
+          planId: selectedPlan.id
+        };
+        
+        console.log('Sending payment data to capture API:', paymentData);
+        
+        // Cattura il pagamento tramite la nostra API
+        const response = await fetch('/api/paypal/capture-order', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            orderID: data.orderID,
+          }),
+        });
 
-      if (!response.ok) {
-        const errorText = await response.text();
-        console.error('API error response:', errorText);
-        throw new Error('Errore nella cattura del pagamento');
+        if (!response.ok) {
+          const errorText = await response.text();
+          console.error('API error response:', errorText);
+          throw new Error('Errore nella cattura del pagamento');
+        }
+
+        const captureData = await response.json();
+        console.log('Payment captured successfully:', captureData);
+        
+        // Redirect alla pagina di successo order
+        window.location.href = `/checkout/success?orderID=${data.orderID}&planId=${selectedPlan.id}`;
       }
-
-      const captureData = await response.json();
-      console.log('Payment captured successfully:', captureData);
       
-      // Redirect alla pagina di successo
-      window.location.href = `/checkout/success?orderID=${data.orderID}&planId=${selectedPlan.id}`;
     } catch (error) {
-      console.error('Payment failed:', error);
+      console.error('Payment/Subscription failed:', error);
       setError('Errore nel completamento del pagamento. Riprova o contatta il supporto.');
     } finally {
       setLoading(false);
@@ -357,15 +418,19 @@ export default function CheckoutPage() {
           >
             <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">Piano {selectedPlan.name}</h2>
             <div className="mb-6">
-              <span className="text-4xl font-bold text-purple-600">€{selectedPlan.price}</span>
-              <span className="text-[var(--text-secondary)]">/{selectedPlan.period}</span>
+              <span className="text-4xl font-bold text-purple-600">
+                €{typeof selectedPlan.price === 'number' ? selectedPlan.price.toFixed(2) : selectedPlan.price}
+              </span>
+              <span className="text-[var(--text-secondary)]">
+                /{selectedPlan.period || (selectedPlan.interval === 'MONTH' ? 'mese' : 'anno')}
+              </span>
               <div className="text-sm text-[var(--text-secondary)] opacity-75">+IVA</div>
             </div>
             <p className="text-[var(--text-secondary)] mb-6">{selectedPlan.description}</p>
             
             <h3 className="font-semibold text-[var(--text-primary)] mb-4">Cosa include:</h3>
             <ul className="space-y-3">
-              {selectedPlan.features.map((feature, index) => (
+              {selectedPlan.features.map((feature: string, index: number) => (
                 <motion.li
                   key={index}
                   className="flex items-start space-x-3"
@@ -411,14 +476,24 @@ export default function CheckoutPage() {
             <div className="bg-[var(--bg-secondary)] rounded-lg p-4 mb-6">
               <div className="flex justify-between items-center">
                 <span className="text-[var(--text-secondary)]">Piano {selectedPlan.name}</span>
-                <span className="font-semibold text-[var(--text-primary)]">€{selectedPlan.price}/{selectedPlan.period} +IVA</span>
+                <span className="font-semibold text-[var(--text-primary)]">
+                  €{typeof selectedPlan.price === 'number' ? selectedPlan.price.toFixed(2) : selectedPlan.price}/
+                  {selectedPlan.period || (selectedPlan.interval === 'MONTH' ? 'mese' : 'anno')} +IVA
+                </span>
               </div>
               <div className="border-t border-[var(--border-primary)] mt-2 pt-2">
                 <div className="flex justify-between items-center font-bold">
                   <span className="text-[var(--text-primary)]">Totale</span>
-                  <span className="text-purple-600">€{selectedPlan.price} +IVA</span>
+                  <span className="text-purple-600">
+                    €{typeof selectedPlan.price === 'number' ? selectedPlan.price.toFixed(2) : selectedPlan.price} +IVA
+                  </span>
                 </div>
               </div>
+              {selectedPlan.paypal_plan_id && (
+                <div className="mt-2 text-xs text-green-600">
+                  🔄 Pagamento ricorrente attivo - rinnovo automatico
+                </div>
+              )}
             </div>
 
             {loading && (

@@ -1,0 +1,295 @@
+[debug] [2025-09-05T13:47:51.173Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.174Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.174Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.174Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.174Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.174Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.175Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.175Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.175Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.175Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.175Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.175Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.175Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.175Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.175Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.175Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.175Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.175Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.176Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/ [none]
+[debug] [2025-09-05T13:47:51.176Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/ x-goog-quota-user=projects/hypeg-56f5d
+[debug] [2025-09-05T13:47:51.193Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/storage.googleapis.com [none]
+[debug] [2025-09-05T13:47:51.193Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/storage.googleapis.com x-goog-quota-user=projects/hypeg-56f5d
+[debug] [2025-09-05T13:47:51.194Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasedataconnect.googleapis.com [none]
+[debug] [2025-09-05T13:47:51.194Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/hypeg-56f5d
+[debug] [2025-09-05T13:47:51.194Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/identitytoolkit.googleapis.com [none]
+[debug] [2025-09-05T13:47:51.194Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/identitytoolkit.googleapis.com x-goog-quota-user=projects/hypeg-56f5d
+[debug] [2025-09-05T13:47:51.194Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/fcm.googleapis.com [none]
+[debug] [2025-09-05T13:47:51.194Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/fcm.googleapis.com x-goog-quota-user=projects/hypeg-56f5d
+[debug] [2025-09-05T13:47:51.195Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseremoteconfig.googleapis.com [none]
+[debug] [2025-09-05T13:47:51.195Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseremoteconfig.googleapis.com x-goog-quota-user=projects/hypeg-56f5d
+[debug] [2025-09-05T13:47:51.195Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasecrashlytics.googleapis.com [none]
+[debug] [2025-09-05T13:47:51.195Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasecrashlytics.googleapis.com x-goog-quota-user=projects/hypeg-56f5d
+[debug] [2025-09-05T13:47:51.196Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseapphosting.googleapis.com [none]
+[debug] [2025-09-05T13:47:51.196Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/hypeg-56f5d
+[debug] [2025-09-05T13:47:51.196Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseio.com [none]
+[debug] [2025-09-05T13:47:51.196Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseio.com x-goog-quota-user=projects/hypeg-56f5d
+[debug] [2025-09-05T13:47:51.229Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.229Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.229Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.229Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.229Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.229Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.230Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.230Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.230Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.230Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.230Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.230Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.230Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.230Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.230Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.230Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.230Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.230Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.230Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.230Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.230Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.230Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.230Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.230Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.230Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.230Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.230Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.230Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.230Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.230Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.230Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.230Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.230Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.230Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.231Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.231Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:47:51.231Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/ [none]
+[debug] [2025-09-05T13:47:51.231Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/ x-goog-quota-user=projects/hypeg-56f5d
+[debug] [2025-09-05T13:47:51.231Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/storage.googleapis.com [none]
+[debug] [2025-09-05T13:47:51.231Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/storage.googleapis.com x-goog-quota-user=projects/hypeg-56f5d
+[debug] [2025-09-05T13:47:51.232Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasedataconnect.googleapis.com [none]
+[debug] [2025-09-05T13:47:51.232Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/hypeg-56f5d
+[debug] [2025-09-05T13:47:51.232Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/identitytoolkit.googleapis.com [none]
+[debug] [2025-09-05T13:47:51.232Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/identitytoolkit.googleapis.com x-goog-quota-user=projects/hypeg-56f5d
+[debug] [2025-09-05T13:47:51.232Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/fcm.googleapis.com [none]
+[debug] [2025-09-05T13:47:51.232Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/fcm.googleapis.com x-goog-quota-user=projects/hypeg-56f5d
+[debug] [2025-09-05T13:47:51.233Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseremoteconfig.googleapis.com [none]
+[debug] [2025-09-05T13:47:51.233Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseremoteconfig.googleapis.com x-goog-quota-user=projects/hypeg-56f5d
+[debug] [2025-09-05T13:47:51.233Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasecrashlytics.googleapis.com [none]
+[debug] [2025-09-05T13:47:51.233Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasecrashlytics.googleapis.com x-goog-quota-user=projects/hypeg-56f5d
+[debug] [2025-09-05T13:47:51.233Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseapphosting.googleapis.com [none]
+[debug] [2025-09-05T13:47:51.233Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/hypeg-56f5d
+[debug] [2025-09-05T13:47:51.234Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseio.com [none]
+[debug] [2025-09-05T13:47:51.234Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseio.com x-goog-quota-user=projects/hypeg-56f5d
+[debug] [2025-09-05T13:47:51.234Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/ [none]
+[debug] [2025-09-05T13:47:51.234Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/ x-goog-quota-user=projects/hypeg-56f5d
+[debug] [2025-09-05T13:47:51.234Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/storage.googleapis.com [none]
+[debug] [2025-09-05T13:47:51.234Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/storage.googleapis.com x-goog-quota-user=projects/hypeg-56f5d
+[debug] [2025-09-05T13:47:51.235Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasedataconnect.googleapis.com [none]
+[debug] [2025-09-05T13:47:51.235Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/hypeg-56f5d
+[debug] [2025-09-05T13:47:51.236Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/identitytoolkit.googleapis.com [none]
+[debug] [2025-09-05T13:47:51.236Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/identitytoolkit.googleapis.com x-goog-quota-user=projects/hypeg-56f5d
+[debug] [2025-09-05T13:47:51.236Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/fcm.googleapis.com [none]
+[debug] [2025-09-05T13:47:51.236Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/fcm.googleapis.com x-goog-quota-user=projects/hypeg-56f5d
+[debug] [2025-09-05T13:47:51.237Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseremoteconfig.googleapis.com [none]
+[debug] [2025-09-05T13:47:51.237Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseremoteconfig.googleapis.com x-goog-quota-user=projects/hypeg-56f5d
+[debug] [2025-09-05T13:47:51.238Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasecrashlytics.googleapis.com [none]
+[debug] [2025-09-05T13:47:51.238Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasecrashlytics.googleapis.com x-goog-quota-user=projects/hypeg-56f5d
+[debug] [2025-09-05T13:47:51.238Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseapphosting.googleapis.com [none]
+[debug] [2025-09-05T13:47:51.238Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/hypeg-56f5d
+[debug] [2025-09-05T13:47:51.239Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseio.com [none]
+[debug] [2025-09-05T13:47:51.239Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseio.com x-goog-quota-user=projects/hypeg-56f5d
+[debug] [2025-09-05T13:47:52.984Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseio.com 403
+[debug] [2025-09-05T13:47:52.985Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseio.com [omitted]
+[debug] [2025-09-05T13:47:53.299Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasedataconnect.googleapis.com 200
+[debug] [2025-09-05T13:47:53.299Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasedataconnect.googleapis.com [omitted]
+[debug] [2025-09-05T13:47:53.300Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/identitytoolkit.googleapis.com 200
+[debug] [2025-09-05T13:47:53.300Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/identitytoolkit.googleapis.com [omitted]
+[debug] [2025-09-05T13:47:53.307Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/fcm.googleapis.com 200
+[debug] [2025-09-05T13:47:53.307Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/fcm.googleapis.com [omitted]
+[debug] [2025-09-05T13:47:53.312Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasecrashlytics.googleapis.com 200
+[debug] [2025-09-05T13:47:53.312Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasecrashlytics.googleapis.com [omitted]
+[debug] [2025-09-05T13:47:53.312Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseapphosting.googleapis.com 200
+[debug] [2025-09-05T13:47:53.312Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2025-09-05T13:47:53.317Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseremoteconfig.googleapis.com 200
+[debug] [2025-09-05T13:47:53.317Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseremoteconfig.googleapis.com [omitted]
+[debug] [2025-09-05T13:47:53.322Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/ 200
+[debug] [2025-09-05T13:47:53.323Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/ [omitted]
+[debug] [2025-09-05T13:47:53.323Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/storage.googleapis.com 200
+[debug] [2025-09-05T13:47:53.323Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/storage.googleapis.com [omitted]
+[debug] [2025-09-05T13:47:53.687Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseio.com 403
+[debug] [2025-09-05T13:47:53.687Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseio.com [omitted]
+[debug] [2025-09-05T13:47:53.706Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseio.com 403
+[debug] [2025-09-05T13:47:53.706Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseio.com [omitted]
+[debug] [2025-09-05T13:47:54.138Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasedataconnect.googleapis.com 200
+[debug] [2025-09-05T13:47:54.138Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasedataconnect.googleapis.com [omitted]
+[debug] [2025-09-05T13:47:54.139Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/fcm.googleapis.com 200
+[debug] [2025-09-05T13:47:54.139Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/fcm.googleapis.com [omitted]
+[debug] [2025-09-05T13:47:54.149Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/fcm.googleapis.com 200
+[debug] [2025-09-05T13:47:54.149Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/fcm.googleapis.com [omitted]
+[debug] [2025-09-05T13:47:54.155Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseapphosting.googleapis.com 200
+[debug] [2025-09-05T13:47:54.156Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2025-09-05T13:47:54.163Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/identitytoolkit.googleapis.com 200
+[debug] [2025-09-05T13:47:54.163Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/identitytoolkit.googleapis.com [omitted]
+[debug] [2025-09-05T13:47:54.170Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasecrashlytics.googleapis.com 200
+[debug] [2025-09-05T13:47:54.170Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasecrashlytics.googleapis.com [omitted]
+[debug] [2025-09-05T13:47:54.171Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/identitytoolkit.googleapis.com 200
+[debug] [2025-09-05T13:47:54.171Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/identitytoolkit.googleapis.com [omitted]
+[debug] [2025-09-05T13:47:54.176Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseremoteconfig.googleapis.com 200
+[debug] [2025-09-05T13:47:54.176Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseremoteconfig.googleapis.com [omitted]
+[debug] [2025-09-05T13:47:54.180Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasedataconnect.googleapis.com 200
+[debug] [2025-09-05T13:47:54.180Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasedataconnect.googleapis.com [omitted]
+[debug] [2025-09-05T13:47:54.181Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/storage.googleapis.com 200
+[debug] [2025-09-05T13:47:54.181Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/storage.googleapis.com [omitted]
+[debug] [2025-09-05T13:47:54.189Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasecrashlytics.googleapis.com 200
+[debug] [2025-09-05T13:47:54.189Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasecrashlytics.googleapis.com [omitted]
+[debug] [2025-09-05T13:47:54.190Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseremoteconfig.googleapis.com 200
+[debug] [2025-09-05T13:47:54.190Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseremoteconfig.googleapis.com [omitted]
+[debug] [2025-09-05T13:47:54.206Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-09-05T13:47:54.206Z] > authorizing via signed-in user (paoloscordopubbliworks@gmail.com)
+[debug] [2025-09-05T13:47:54.208Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseapphosting.googleapis.com 200
+[debug] [2025-09-05T13:47:54.208Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2025-09-05T13:47:54.213Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/storage.googleapis.com 200
+[debug] [2025-09-05T13:47:54.213Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/storage.googleapis.com [omitted]
+[debug] [2025-09-05T13:47:54.233Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-09-05T13:47:54.233Z] > authorizing via signed-in user (paoloscordopubbliworks@gmail.com)
+[debug] [2025-09-05T13:47:54.380Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/ 200
+[debug] [2025-09-05T13:47:54.380Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/ [omitted]
+[debug] [2025-09-05T13:47:54.427Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/ 200
+[debug] [2025-09-05T13:47:54.427Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/ [omitted]
+[debug] [2025-09-05T13:50:31.842Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:50:31.843Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:50:31.843Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:50:31.844Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:50:31.844Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:50:31.844Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:50:31.844Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:50:31.844Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:50:31.845Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/ [none]
+[debug] [2025-09-05T13:50:31.845Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/ x-goog-quota-user=projects/hypeg-56f5d
+[debug] [2025-09-05T13:50:31.863Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasedataconnect.googleapis.com [none]
+[debug] [2025-09-05T13:50:31.863Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/hypeg-56f5d
+[debug] [2025-09-05T13:50:31.864Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasecrashlytics.googleapis.com [none]
+[debug] [2025-09-05T13:50:31.864Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasecrashlytics.googleapis.com x-goog-quota-user=projects/hypeg-56f5d
+[debug] [2025-09-05T13:50:31.864Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseio.com [none]
+[debug] [2025-09-05T13:50:31.864Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseio.com x-goog-quota-user=projects/hypeg-56f5d
+[debug] [2025-09-05T13:50:31.876Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:50:31.876Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:50:31.876Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:50:31.876Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:50:31.876Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:50:31.876Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:50:31.876Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:50:31.876Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:50:31.877Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:50:31.877Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:50:31.877Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:50:31.877Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:50:31.877Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:50:31.877Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:50:31.877Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:50:31.877Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T13:50:31.877Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/ [none]
+[debug] [2025-09-05T13:50:31.877Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/ x-goog-quota-user=projects/hypeg-56f5d
+[debug] [2025-09-05T13:50:31.878Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasedataconnect.googleapis.com [none]
+[debug] [2025-09-05T13:50:31.878Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/hypeg-56f5d
+[debug] [2025-09-05T13:50:31.879Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasecrashlytics.googleapis.com [none]
+[debug] [2025-09-05T13:50:31.881Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasecrashlytics.googleapis.com x-goog-quota-user=projects/hypeg-56f5d
+[debug] [2025-09-05T13:50:31.882Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseio.com [none]
+[debug] [2025-09-05T13:50:31.882Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseio.com x-goog-quota-user=projects/hypeg-56f5d
+[debug] [2025-09-05T13:50:31.883Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/ [none]
+[debug] [2025-09-05T13:50:31.883Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/ x-goog-quota-user=projects/hypeg-56f5d
+[debug] [2025-09-05T13:50:31.884Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasedataconnect.googleapis.com [none]
+[debug] [2025-09-05T13:50:31.884Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/hypeg-56f5d
+[debug] [2025-09-05T13:50:31.884Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasecrashlytics.googleapis.com [none]
+[debug] [2025-09-05T13:50:31.884Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasecrashlytics.googleapis.com x-goog-quota-user=projects/hypeg-56f5d
+[debug] [2025-09-05T13:50:31.884Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseio.com [none]
+[debug] [2025-09-05T13:50:31.884Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseio.com x-goog-quota-user=projects/hypeg-56f5d
+[debug] [2025-09-05T13:50:32.774Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseio.com 403
+[debug] [2025-09-05T13:50:32.774Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseio.com [omitted]
+[debug] [2025-09-05T13:50:32.776Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseio.com 403
+[debug] [2025-09-05T13:50:32.776Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseio.com [omitted]
+[debug] [2025-09-05T13:50:32.836Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseio.com 403
+[debug] [2025-09-05T13:50:32.836Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebaseio.com [omitted]
+[debug] [2025-09-05T13:50:33.072Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasecrashlytics.googleapis.com 200
+[debug] [2025-09-05T13:50:33.072Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasecrashlytics.googleapis.com [omitted]
+[debug] [2025-09-05T13:50:33.073Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasecrashlytics.googleapis.com 200
+[debug] [2025-09-05T13:50:33.073Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasecrashlytics.googleapis.com [omitted]
+[debug] [2025-09-05T13:50:33.074Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasedataconnect.googleapis.com 200
+[debug] [2025-09-05T13:50:33.074Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasedataconnect.googleapis.com [omitted]
+[debug] [2025-09-05T13:50:33.075Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasecrashlytics.googleapis.com 200
+[debug] [2025-09-05T13:50:33.076Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasecrashlytics.googleapis.com [omitted]
+[debug] [2025-09-05T13:50:33.093Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasedataconnect.googleapis.com 200
+[debug] [2025-09-05T13:50:33.093Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasedataconnect.googleapis.com [omitted]
+[debug] [2025-09-05T13:50:33.135Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/ 200
+[debug] [2025-09-05T13:50:33.135Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/ [omitted]
+[debug] [2025-09-05T13:50:33.205Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/ 200
+[debug] [2025-09-05T13:50:33.205Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/ [omitted]
+[debug] [2025-09-05T13:50:33.225Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasedataconnect.googleapis.com 200
+[debug] [2025-09-05T13:50:33.225Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/firebasedataconnect.googleapis.com [omitted]
+[debug] [2025-09-05T13:50:33.239Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-09-05T13:50:33.239Z] > authorizing via signed-in user (paoloscordopubbliworks@gmail.com)
+[debug] [2025-09-05T13:50:33.258Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/ 200
+[debug] [2025-09-05T13:50:33.258Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/hypeg-56f5d/services/ [omitted]
+[debug] [2025-09-05T13:50:33.261Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-09-05T13:50:33.261Z] > authorizing via signed-in user (paoloscordopubbliworks@gmail.com)
+[debug] [2025-09-05T14:15:10.464Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-09-05T14:15:10.465Z] > authorizing via signed-in user (paoloscordopubbliworks@gmail.com)
+[debug] [2025-09-05T14:15:17.163Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-09-05T14:15:17.163Z] > authorizing via signed-in user (paoloscordopubbliworks@gmail.com)
+[debug] [2025-09-05T14:15:17.164Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T14:15:17.164Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T14:15:17.164Z] >>> [apiv2][query] POST https://firestore.googleapis.com/v1/projects/hypeg-56f5d/databases/(default)/documents:listCollectionIds [none]
+[debug] [2025-09-05T14:15:17.164Z] >>> [apiv2][body] POST https://firestore.googleapis.com/v1/projects/hypeg-56f5d/databases/(default)/documents:listCollectionIds {"pageSize":2147483647}
+[debug] [2025-09-05T14:15:17.773Z] <<< [apiv2][status] POST https://firestore.googleapis.com/v1/projects/hypeg-56f5d/databases/(default)/documents:listCollectionIds 200
+[debug] [2025-09-05T14:15:17.773Z] <<< [apiv2][body] POST https://firestore.googleapis.com/v1/projects/hypeg-56f5d/databases/(default)/documents:listCollectionIds {"collectionIds":["customers","subscription_plans","subscriptions"]}
+[debug] [2025-09-05T14:15:27.215Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-09-05T14:15:27.215Z] > authorizing via signed-in user (paoloscordopubbliworks@gmail.com)
+[debug] [2025-09-05T14:15:27.216Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T14:15:27.216Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T14:15:27.216Z] >>> [apiv2][query] POST https://firestore.googleapis.com/v1/projects/hypeg-56f5d/databases/(default)/documents:runQuery [none]
+[debug] [2025-09-05T14:15:27.216Z] >>> [apiv2][body] POST https://firestore.googleapis.com/v1/projects/hypeg-56f5d/databases/(default)/documents:runQuery {"structuredQuery":{"from":[{"collectionId":"subscription_payments","allDescendants":false}],"where":{"compositeFilter":{"op":"AND","filters":[]}},"limit":1},"explainOptions":{"analyze":true},"newTransaction":{"readOnly":{"readTime":"2025-09-05T14:15:27.216Z"}}}
+[debug] [2025-09-05T14:15:27.389Z] <<< [apiv2][status] POST https://firestore.googleapis.com/v1/projects/hypeg-56f5d/databases/(default)/documents:runQuery 200
+[debug] [2025-09-05T14:15:27.389Z] <<< [apiv2][body] POST https://firestore.googleapis.com/v1/projects/hypeg-56f5d/databases/(default)/documents:runQuery [{"transaction":"ESiw546SAVsoIlkAj0wdw3uyQZ5AdxQMoy2tTSpBGaacCHS8HF/19G/fTIJ54wIEHVPBW2wT09prAZB9QrZWXpj4hO8ILyesM1bwL0jWI1Lb9tACjw9sHciFZFrCq6ey/r8zjA=="},{"readTime":"2025-09-05T14:15:27.216Z","explainMetrics":{"planSummary":{"indexesUsed":[{"properties":"(__name__ ASC)","query_scope":"Collection"}]},"executionStats":{"executionDuration":"0.009261s","readOperations":"1","debugStats":{"billing_details":{"min_query_cost":"1","small_ops":"0","documents_billable":"0","index_entries_billable":"0"},"index_entries_scanned":"0","documents_scanned":"0"}}}}]
+[debug] [2025-09-05T14:15:34.054Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-09-05T14:15:34.055Z] > authorizing via signed-in user (paoloscordopubbliworks@gmail.com)
+[debug] [2025-09-05T14:15:34.055Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T14:15:34.055Z] Checked if tokens are valid: true, expires at: 1757082777364
+[debug] [2025-09-05T14:15:34.055Z] >>> [apiv2][query] POST https://firestore.googleapis.com/v1/projects/hypeg-56f5d/databases/(default)/documents:runQuery [none]
+[debug] [2025-09-05T14:15:34.055Z] >>> [apiv2][body] POST https://firestore.googleapis.com/v1/projects/hypeg-56f5d/databases/(default)/documents:runQuery {"structuredQuery":{"from":[{"collectionId":"payments","allDescendants":false}],"where":{"compositeFilter":{"op":"AND","filters":[]}},"limit":1},"explainOptions":{"analyze":true},"newTransaction":{"readOnly":{"readTime":"2025-09-05T14:15:34.055Z"}}}
+[debug] [2025-09-05T14:15:34.382Z] <<< [apiv2][status] POST https://firestore.googleapis.com/v1/projects/hypeg-56f5d/databases/(default)/documents:runQuery 200
+[debug] [2025-09-05T14:15:34.382Z] <<< [apiv2][body] POST https://firestore.googleapis.com/v1/projects/hypeg-56f5d/databases/(default)/documents:runQuery [{"transaction":"EYXEFgmX/zMUIlkAj0wdw3AXm2leP0QAH7TJ1m/87roDH+c5wDI2GzGB6vbYZZINPwiUFy7XFe9qbBZyBifRMLAVaRcLCkY88ohM3EkG3X/7ghY8oRpg+DImo29kpEGpwhdiCA=="},{"readTime":"2025-09-05T14:15:34.055Z","explainMetrics":{"planSummary":{"indexesUsed":[{"properties":"(__name__ ASC)","query_scope":"Collection"}]},"executionStats":{"executionDuration":"0.012011s","readOperations":"1","debugStats":{"billing_details":{"small_ops":"0","index_entries_billable":"0","documents_billable":"0","min_query_cost":"1"},"index_entries_scanned":"0","documents_scanned":"0"}}}}]
+[debug] [2025-09-05T14:41:21.107Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-09-05T14:41:21.107Z] > authorizing via signed-in user (paoloscordopubbliworks@gmail.com)
+[debug] [2025-09-05T14:41:28.819Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-09-05T14:41:28.819Z] > authorizing via signed-in user (paoloscordopubbliworks@gmail.com)
+[debug] [2025-09-05T14:41:28.819Z] Checked if tokens are valid: false, expires at: 1757082777364
+[debug] [2025-09-05T14:41:28.819Z] Checked if tokens are valid: false, expires at: 1757082777364
+[debug] [2025-09-05T14:41:28.820Z] > refreshing access token with scopes: []
+[debug] [2025-09-05T14:41:28.820Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-09-05T14:41:28.820Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-05T14:41:29.159Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-09-05T14:41:29.160Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-05T14:41:29.169Z] >>> [apiv2][query] POST https://firestore.googleapis.com/v1/projects/hypeg-56f5d/databases/(default)/documents:listCollectionIds [none]
+[debug] [2025-09-05T14:41:29.169Z] >>> [apiv2][body] POST https://firestore.googleapis.com/v1/projects/hypeg-56f5d/databases/(default)/documents:listCollectionIds {"pageSize":2147483647}
+[debug] [2025-09-05T14:41:29.822Z] <<< [apiv2][status] POST https://firestore.googleapis.com/v1/projects/hypeg-56f5d/databases/(default)/documents:listCollectionIds 200
+[debug] [2025-09-05T14:41:29.822Z] <<< [apiv2][body] POST https://firestore.googleapis.com/v1/projects/hypeg-56f5d/databases/(default)/documents:listCollectionIds {"collectionIds":["customers","subscription_plans","subscriptions"]}
+[debug] [2025-09-05T14:42:30.684Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-09-05T14:42:30.684Z] > authorizing via signed-in user (paoloscordopubbliworks@gmail.com)
+[debug] [2025-09-05T14:42:30.685Z] Checked if tokens are valid: true, expires at: 1757086888160
+[debug] [2025-09-05T14:42:30.685Z] Checked if tokens are valid: true, expires at: 1757086888160
+[debug] [2025-09-05T14:42:30.686Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/hypeg-56f5d/releases pageSize=10&pageToken=
+[debug] [2025-09-05T14:42:31.159Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/hypeg-56f5d/releases 200
+[debug] [2025-09-05T14:42:31.159Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/hypeg-56f5d/releases {"releases":[{"name":"projects/hypeg-56f5d/releases/cloud.firestore","rulesetName":"projects/hypeg-56f5d/rulesets/510496b1-a656-48aa-aa7c-b6db747315a9","createTime":"2025-09-05T09:26:26.713031Z","updateTime":"2025-09-05T09:26:26.713031Z"}]}
+[debug] [2025-09-05T14:42:31.159Z] Checked if tokens are valid: true, expires at: 1757086888160
+[debug] [2025-09-05T14:42:31.159Z] Checked if tokens are valid: true, expires at: 1757086888160
+[debug] [2025-09-05T14:42:31.159Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/hypeg-56f5d/rulesets/510496b1-a656-48aa-aa7c-b6db747315a9 [none]
+[debug] [2025-09-05T14:42:31.495Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/hypeg-56f5d/rulesets/510496b1-a656-48aa-aa7c-b6db747315a9 200
+[debug] [2025-09-05T14:42:31.495Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/hypeg-56f5d/rulesets/510496b1-a656-48aa-aa7c-b6db747315a9 [omitted]
