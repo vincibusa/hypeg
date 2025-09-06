@@ -46,7 +46,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           >
             <motion.a 
-              href="#" 
+              href="#chi-siamo" 
               className="inline-block bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg"
               whileHover={{ 
                 scale: 1.05,
@@ -54,6 +54,10 @@ export default function Hero() {
               }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('chi-siamo')?.scrollIntoView({ behavior: 'smooth' });
+              }}
             >
               Scopri di più
             </motion.a>

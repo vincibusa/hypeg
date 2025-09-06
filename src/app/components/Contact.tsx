@@ -246,7 +246,7 @@ export default function Contact() {
                     {item.icon}
                   </motion.div>
                   <div>
-                    <h4 className="font-semibold text-[var(--text-primary)]">{item.title}</h4>
+                    <h3 className="font-semibold text-[var(--text-primary)]">{item.title}</h3>
                     <p className="text-[var(--text-secondary)]">{item.content}</p>
                   </div>
                 </motion.div>

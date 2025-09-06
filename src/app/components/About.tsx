@@ -49,7 +49,7 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.8 }}
             >
               <motion.a 
-                href="#" 
+                href="#servizi" 
                 className="inline-block bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg"
                 whileHover={{ 
                   scale: 1.05,
@@ -57,6 +57,10 @@ export default function About() {
                 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('servizi')?.scrollIntoView({ behavior: 'smooth' });
+                }}
               >
                 I nostri servizi
               </motion.a>

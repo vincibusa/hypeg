@@ -5,6 +5,7 @@ import { useRef, useState } from 'react';
 import { useInView } from 'framer-motion';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Breadcrumb from '../components/Breadcrumb';
 import Image from 'next/image';
 
 interface Theme {
@@ -146,6 +147,7 @@ export default function TemiClient() {
   return (
     <div className="relative flex size-full min-h-screen flex-col overflow-x-hidden bg-[var(--bg-primary)] text-[var(--text-primary)]">
       <Header />
+      <Breadcrumb />
       
       <main className="flex-1">
         {/* Hero Section */}

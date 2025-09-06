@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/contexts/ThemeContext";
+import CookieConsent from "./components/CookieConsent";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -141,6 +142,7 @@ export default function RootLayout({
       >
         <ThemeProvider>
           {children}
+          <CookieConsent />
         </ThemeProvider>
       </body>
     </html>

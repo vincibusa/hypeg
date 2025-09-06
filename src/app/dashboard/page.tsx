@@ -1,8 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 import db from '@/lib/firebase';
 
@@ -23,11 +22,7 @@ export default function DashboardPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    fetchPayments();
-  }, []);
-
-  const fetchPayments = async () => {
+  const fetchPayments = useCallback(async () => {
     try {
       setLoading(true);
       
@@ -86,7 +81,11 @@ export default function DashboardPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    fetchPayments();
+  }, [fetchPayments]);
 
   const getPlanName = (planId: string): string => {
     const planNames: { [key: string]: string } = {
@@ -104,17 +103,6 @@ export default function DashboardPage() {
       'grafica': 'Grafica'
     };
     return planNames[planId] || planId;
-  };
-
-
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case 'ACTIVE': return 'bg-green-100 text-green-800';
-      case 'CANCELLED': return 'bg-red-100 text-red-800';
-      case 'SUSPENDED': return 'bg-yellow-100 text-yellow-800';
-      case 'EXPIRED': return 'bg-gray-100 text-gray-800';
-      default: return 'bg-gray-100 text-gray-800';
-    }
   };
 
   const formatDate = (date: Date | string | null | undefined) => {
