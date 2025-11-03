@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -153,15 +154,21 @@ export default function Header() {
             e.preventDefault();
             handleNavigation({ name: 'Home', id: 'home', href: '/', icon: <></> });
           }}
-          className="text-2xl font-bold"
+          className="relative"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ delay: 0.3, type: "spring", stiffness: 200, damping: 10 }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <span className="bg-gradient-to-r from-purple-600 to-indigo-600 text-transparent bg-clip-text">HIPE</span>
-          <span className="text-[var(--text-primary)]">G</span>
+          <Image 
+            src="/logo.png" 
+            alt="HipeG Creative Company" 
+            width={240}
+            height={80}
+            priority
+            className="h-16 w-auto"
+          />
         </motion.a>
         
         <motion.nav 

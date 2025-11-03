@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 export default function Footer() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -21,9 +23,15 @@ export default function Footer() {
                 e.preventDefault();
                 scrollToSection('home');
               }}
-              className="text-2xl font-bold text-[var(--text-primary)] mb-4 block hover:text-[var(--accent-primary)] transition duration-300"
+              className="block mb-4 hover:opacity-80 transition duration-300"
             >
-              HipeG
+              <Image 
+                src="/logo.png" 
+                alt="HipeG Creative Company" 
+                width={200}
+                height={67}
+                className="h-auto w-auto max-w-[180px]"
+              />
             </a>
             <p className="text-[var(--text-secondary)] mb-4">
               Trasformiamo le tue idee in progetti digitali di successo.

@@ -8,13 +8,7 @@ export default function Hero() {
     <section id="home" className="relative py-24 sm:py-32 overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/hero/hero-bg.jpg"
-          alt="Digital team collaboration"
-          fill
-          className="object-cover opacity-10"
-          priority
-        />
+
         <div className="absolute inset-0 bg-gradient-to-r from-[var(--bg-primary)] via-[var(--bg-primary)]/95 to-[var(--bg-primary)]/80"></div>
       </div>
       
@@ -73,7 +67,7 @@ export default function Hero() {
           >
             <div className="relative w-full h-96 rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/images/hero/digital-workspace.jpg"
+                src="/3.jpeg"
                 alt="Modern digital workspace"
                 fill
                 className="object-cover"

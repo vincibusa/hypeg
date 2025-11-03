@@ -79,7 +79,7 @@ export default function About() {
                 transition={{ duration: 0.3 }}
               >
                 <Image
-                  src="/images/about/team-work.jpg"
+                  src="/4.jpeg"
                   alt="Team collaboration and creative work"
                   fill
                   className="object-cover"

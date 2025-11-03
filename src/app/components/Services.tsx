@@ -19,7 +19,7 @@ export default function Services() {
       title: "Siti Web & eCommerce",
       description: "Realizziamo siti web professionali, e-commerce e portali aziendali ottimizzati SEO, responsive e veloci. Creiamo siti su misura per far crescere il tuo business online con design moderno e funzionalità avanzate.",
       technologies: "WordPress, Shopify, Next.js, SEO ottimizzato",
-      image: "/images/services/web-development.jpg"
+      image: "/5.jpeg"
     },
     {
       icon: (
@@ -30,7 +30,7 @@ export default function Services() {
       title: "Social Media Management",
       description: "Gestiamo i tuoi profili social per far crescere il tuo brand. Contenuti creativi, strategie mirate e campagne pubblicitarie efficaci su Instagram, Facebook, TikTok e LinkedIn per aumentare engagement e conversioni.",
       technologies: "Instagram, Facebook, TikTok, LinkedIn, Meta Ads",
-      image: "/images/services/social-media.jpg"
+      image: "/6.jpeg"
     },
     {
       icon: (
@@ -53,7 +53,7 @@ export default function Services() {
       title: "Grafica & Branding",
       description: "Costruiamo o rinnoviamo l'immagine del tuo brand con loghi, identità visive, brochure e materiali di comunicazione. Creiamo un'identità visiva forte e coerente che rende unico il tuo brand.",
       technologies: "Logo design, Brand identity, Grafica stampa e digital",
-      image: "/images/services/branding.jpg"
+      image: "/1.jpeg"
     },
     {
       icon: (
@@ -64,7 +64,7 @@ export default function Services() {
       title: "E-learning & Formazione Online",
       description: "Progettiamo piattaforme e-learning e corsi online personalizzati. Formazione digitale, webinar interattivi e contenuti didattici multimediali per far crescere le competenze del tuo team e della tua azienda.",
       technologies: "Piattaforme LMS, Contenuti interattivi, Webinar",
-      image: "/images/services/elearning.jpg"
+      image: "/7.jpeg"
     }
   ];
 
@@ -124,40 +124,44 @@ export default function Services() {
             <motion.div
               key={index}
               variants={cardVariants}
-              className="bg-[var(--card-bg)] rounded-xl shadow-lg border border-[var(--card-border)] overflow-hidden"
+              className="relative rounded-xl shadow-lg overflow-hidden h-[400px] group"
               whileHover={{
                 y: -10,
                 boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
               }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
-              {/* Image header */}
-              <div className="relative h-48 w-full overflow-hidden">
+              {/* Full image background */}
+              <div className="absolute inset-0">
                 <Image
                   src={service.image}
                   alt={service.title}
                   fill
-                  className="object-cover transition-transform duration-300 hover:scale-110"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                <motion.div 
-                  className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm p-2 rounded-lg text-white"
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                >
-                  {service.icon}
-                </motion.div>
               </div>
               
-              {/* Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-3 text-[var(--text-primary)]">{service.title}</h3>
-                <p className="text-[var(--text-secondary)] leading-relaxed">
+              {/* Dark overlay for text readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/50 group-hover:from-black/80 group-hover:via-black/60 group-hover:to-black/40 transition-all duration-300"></div>
+              
+              {/* Icon */}
+              <motion.div 
+                className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm p-3 rounded-lg text-white z-10"
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
+                {service.icon}
+              </motion.div>
+              
+              {/* Content overlay */}
+              <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
+                <h3 className="text-2xl font-bold mb-3 text-white">{service.title}</h3>
+                <p className="text-white/90 leading-relaxed mb-3">
                   {service.description}
-                  {service.technologies && (
-                    <small className="text-[var(--accent-primary)] opacity-90 mt-3 block font-medium">{service.technologies}</small>
-                  )}
                 </p>
+                {service.technologies && (
+                  <small className="text-purple-300 opacity-90 mt-3 block font-medium">{service.technologies}</small>
+                )}
               </div>
             </motion.div>
           ))}
