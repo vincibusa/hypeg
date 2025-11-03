@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import CookieConsent from "./components/CookieConsent";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -11,8 +12,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "HipeG - Agenzia di Comunicazione Digitale a Palermo | Siti Web, Social Media, Marketing",
-  description: "HipeG: la tua agenzia di comunicazione digitale a Palermo. Realizziamo siti web, gestiamo social media, facciamo video e branding per aziende in Sicilia e Italia. Preventivo gratuito!",
+  title: "HipeG - Agenzia Comunicazione Digitale Palermo | Siti Web, Social Media, Marketing",
+  description: "HipeG: agenzia di comunicazione digitale a Palermo specializzata in siti web, social media, video e branding. Servizi completi per aziende in Sicilia e Italia. Preventivo gratuito!",
   keywords: [
     "HipeG",
     "agenzia comunicazione Palermo",
@@ -26,7 +27,14 @@ export const metadata: Metadata = {
     "social media marketing Italia",
     "comunicazione digitale Palermo",
     "grafica pubblicitaria Sicilia",
-    "video marketing Palermo"
+    "video marketing Palermo",
+    "agenzia marketing Palermo",
+    "web agency Sicilia",
+    "realizzazione siti web Palermo",
+    "gestione social media Sicilia",
+    "branding aziendale Palermo",
+    "e-commerce Sicilia",
+    "posizionamento SEO Palermo"
   ],
   authors: [{ name: "HipeG Creative Agency" }],
   creator: "HipeG",
@@ -46,7 +54,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "it_IT",
     url: "https://hypeg.it",
-    title: "HipeG - Agenzia di Comunicazione Digitale a Palermo",
+    title: "HipeG - Agenzia Comunicazione Digitale Palermo | Siti Web e Social Media",
     description: "Agenzia di comunicazione digitale a Palermo specializzata in siti web, social media marketing, video e grafica. Serviamo clienti in tutta la Sicilia e Italia.",
     siteName: "HipeG",
     images: [
@@ -60,7 +68,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "HipeG - Agenzia di Comunicazione Digitale a Palermo",
+    title: "HipeG - Agenzia Comunicazione Digitale Palermo | Siti Web e Social Media",
     description: "Realizziamo siti web, gestiamo social media e facciamo marketing digitale per aziende a Palermo e in tutta la Sicilia.",
     images: ["/images/hero/hero-bg.jpg"],
   },
@@ -86,7 +94,7 @@ export default function RootLayout({
     "@id": "https://hypeg.it/#organization",
     "name": "HipeG",
     "alternateName": "HipeG Creative Agency",
-    "description": "Agenzia di comunicazione digitale a Palermo specializzata in siti web, social media marketing, video e grafica pubblicitaria per aziende in Sicilia e Italia.",
+    "description": "Agenzia di comunicazione digitale a Palermo specializzata in siti web, social media marketing, video e grafica pubblicitaria per aziende in Sicilia e Italia. Servizi completi di web design, SEO e branding.",
     "url": "https://hypeg.it",
     "logo": "https://hypeg.it/logo.png",
     "image": "https://hypeg.it/images/hero/hero-bg.jpg",
@@ -111,6 +119,18 @@ export default function RootLayout({
         "name": "Palermo"
       },
       {
+        "@type": "City",
+        "name": "Catania"
+      },
+      {
+        "@type": "City",
+        "name": "Messina"
+      },
+      {
+        "@type": "City",
+        "name": "Trapani"
+      },
+      {
         "@type": "State",
         "name": "Sicilia"
       },
@@ -119,7 +139,7 @@ export default function RootLayout({
         "name": "Italia"
       }
     ],
-    "serviceType": ["Web Design", "Social Media Marketing", "Comunicazione Digitale", "Video Marketing", "Grafica Pubblicitaria"],
+    "serviceType": ["Web Design", "Social Media Marketing", "Comunicazione Digitale", "Video Marketing", "Grafica Pubblicitaria", "SEO Ottimizzazione", "Branding Aziendale", "E-commerce Development"],
     "priceRange": "€€",
     "openingHours": "Mo-Fr 09:00-18:00",
     "sameAs": [
@@ -143,6 +163,7 @@ export default function RootLayout({
         <ThemeProvider>
           {children}
           <CookieConsent />
+          <WhatsAppButton />
         </ThemeProvider>
       </body>
     </html>

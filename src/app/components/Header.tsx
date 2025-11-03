@@ -163,7 +163,7 @@ export default function Header() {
         >
           <Image 
             src="/logo.png" 
-            alt="HipeG Creative Company" 
+            alt="HipeG - Agenzia Comunicazione Digitale Palermo" 
             width={240}
             height={80}
             priority
@@ -185,7 +185,7 @@ export default function Header() {
                 e.preventDefault();
                 handleNavigation(item);
               }}
-              className="text-[var(--text-secondary)] hover:text-[var(--accent-primary)] transition duration-300 relative"
+              className="text-[var(--text-secondary)] hover:text-[var(--accent-primary)] transition duration-300 relative font-medium"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 + index * 0.1 }}
@@ -247,7 +247,7 @@ export default function Header() {
                     e.preventDefault();
                     handleNavigation(item);
                   }}
-                  className="flex items-center space-x-3 p-3 rounded-lg text-[var(--text-primary)] hover:text-[var(--accent-primary)] hover:bg-[var(--bg-secondary)] transition-all duration-300"
+                  className="flex items-center space-x-3 p-3 rounded-lg text-[var(--text-primary)] hover:text-[var(--accent-primary)] hover:bg-[var(--bg-secondary)] transition-all duration-300 font-medium"
                   variants={linkVariants}
                   whileHover={{ 
                     x: 5,

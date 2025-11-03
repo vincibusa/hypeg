@@ -22,7 +22,7 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <span className="bg-gradient-to-r from-purple-600 to-indigo-600 text-transparent bg-clip-text">
-              Agenzia di Comunicazione Digitale a Palermo
+              Agenzia Comunicazione Digitale Palermo | Siti Web e Social Media
             </span>
           </motion.h1>
           <motion.p 
@@ -31,7 +31,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           >
-            <strong>HipeG</strong> è la tua <strong>agenzia di comunicazione digitale a Palermo</strong>. Realizziamo <strong>siti web</strong>, gestiamo <strong>social media</strong>, creiamo video e sviluppiamo strategie di marketing per aziende in <strong>Sicilia</strong> e <strong>Italia</strong>. Team giovane, creativo e orientato ai risultati.
+            <strong>HipeG</strong> è la tua <strong>agenzia di comunicazione digitale a Palermo</strong> specializzata in <strong>siti web professionali</strong>, <strong>gestione social media</strong>, <strong>video marketing</strong> e <strong>branding aziendale</strong>. Serviamo aziende in tutta la <strong>Sicilia</strong> e <strong>Italia</strong> con strategie digitali personalizzate per far crescere il tuo business online.
           </motion.p>
           <motion.div 
             className="mt-8"
@@ -68,7 +68,7 @@ export default function Hero() {
             <div className="relative w-full h-96 rounded-2xl overflow-hidden shadow-2xl">
               <Image
                 src="/3.jpeg"
-                alt="Modern digital workspace"
+                alt="Agenzia comunicazione digitale Palermo - HipeG team al lavoro"
                 fill
                 className="object-cover"
               />

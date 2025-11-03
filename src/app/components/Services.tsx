@@ -17,8 +17,8 @@ export default function Services() {
         </svg>
       ),
       title: "Siti Web & eCommerce",
-      description: "Realizziamo siti web professionali, e-commerce e portali aziendali ottimizzati SEO, responsive e veloci. Creiamo siti su misura per far crescere il tuo business online con design moderno e funzionalità avanzate.",
-      technologies: "WordPress, Shopify, Next.js, SEO ottimizzato",
+      description: "Realizziamo siti web professionali, e-commerce e portali aziendali ottimizzati SEO, responsive e veloci. Creazione siti web Palermo con design moderno e funzionalità avanzate per far crescere il tuo business online.",
+      technologies: "WordPress, Shopify, Next.js, SEO ottimizzato, Web Design Palermo",
       image: "/5.jpeg"
     },
     {
@@ -28,8 +28,8 @@ export default function Services() {
         </svg>
       ),
       title: "Social Media Management",
-      description: "Gestiamo i tuoi profili social per far crescere il tuo brand. Contenuti creativi, strategie mirate e campagne pubblicitarie efficaci su Instagram, Facebook, TikTok e LinkedIn per aumentare engagement e conversioni.",
-      technologies: "Instagram, Facebook, TikTok, LinkedIn, Meta Ads",
+      description: "Gestiamo i tuoi profili social per far crescere il tuo brand. Social media manager Palermo con contenuti creativi, strategie mirate e campagne pubblicitarie efficaci su Instagram, Facebook, TikTok e LinkedIn.",
+      technologies: "Instagram, Facebook, TikTok, LinkedIn, Meta Ads, Social Media Palermo",
       image: "/6.jpeg"
     },
     {
@@ -40,8 +40,8 @@ export default function Services() {
         </svg>
       ),
       title: "Video & Foto Making",
-      description: "Realizziamo video aziendali, spot pubblicitari e contenuti visual per social media. Dallo shooting al montaggio, raccontiamo la tua attività con immagini e video capaci di emozionare e coinvolgere il tuo pubblico.",
-      technologies: "Video editing, Motion graphics, Fotografia aziendale",
+      description: "Realizziamo video aziendali, spot pubblicitari e contenuti visual per social media. Video marketing Palermo con shooting professionale e montaggio creativo per raccontare la tua attività con immagini emozionanti.",
+      technologies: "Video editing, Motion graphics, Fotografia aziendale, Video Marketing Sicilia",
       image: "/images/services/video-production.jpg"
     },
     {
@@ -51,8 +51,8 @@ export default function Services() {
         </svg>
       ),
       title: "Grafica & Branding",
-      description: "Costruiamo o rinnoviamo l'immagine del tuo brand con loghi, identità visive, brochure e materiali di comunicazione. Creiamo un'identità visiva forte e coerente che rende unico il tuo brand.",
-      technologies: "Logo design, Brand identity, Grafica stampa e digital",
+      description: "Costruiamo o rinnoviamo l'immagine del tuo brand con loghi, identità visive, brochure e materiali di comunicazione. Grafica pubblicitaria Palermo per creare un'identità visiva forte e coerente.",
+      technologies: "Logo design, Brand identity, Grafica stampa e digital, Branding Aziendale Sicilia",
       image: "/1.jpeg"
     },
     {
@@ -62,8 +62,8 @@ export default function Services() {
         </svg>
       ),
       title: "E-learning & Formazione Online",
-      description: "Progettiamo piattaforme e-learning e corsi online personalizzati. Formazione digitale, webinar interattivi e contenuti didattici multimediali per far crescere le competenze del tuo team e della tua azienda.",
-      technologies: "Piattaforme LMS, Contenuti interattivi, Webinar",
+      description: "Progettiamo piattaforme e-learning e corsi online personalizzati. Formazione digitale Sicilia con webinar interattivi e contenuti didattici multimediali per far crescere le competenze del tuo team.",
+      technologies: "Piattaforme LMS, Contenuti interattivi, Webinar, E-learning Italia",
       image: "/7.jpeg"
     }
   ];
@@ -98,7 +98,7 @@ export default function Services() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl font-bold text-[var(--text-primary)]">Servizi di Comunicazione Digitale a Palermo</h2>
+          <h2 className="text-3xl font-bold text-[var(--text-primary)]">Servizi Comunicazione Digitale Palermo | Agenzia HipeG</h2>
           <motion.div 
             className="w-20 h-1 bg-purple-600 mt-2 mb-4 mx-auto"
             initial={{ width: 0 }}
@@ -106,7 +106,7 @@ export default function Services() {
             transition={{ duration: 0.8, delay: 0.3 }}
           ></motion.div>
           <p className="text-[var(--text-secondary)]">
-            <strong>HipeG</strong> offre servizi completi di marketing digitale per aziende a <strong>Palermo</strong>, <strong>Sicilia</strong> e tutta <strong>Italia</strong>. Dalla creazione di siti web al social media management, dal video marketing alla grafica pubblicitaria.
+            <strong>HipeG</strong> offre servizi completi di <strong>marketing digitale</strong> per aziende a <strong>Palermo</strong>, <strong>Sicilia</strong> e tutta <strong>Italia</strong>. Specializzati in <strong>creazione siti web</strong>, <strong>social media management</strong>, <strong>video marketing</strong> e <strong>grafica pubblicitaria</strong>. Agenzia di comunicazione digitale leader a Palermo.
           </p>
         </motion.div>
 

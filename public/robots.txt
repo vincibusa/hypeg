@@ -8,17 +8,25 @@ Sitemap: https://hypeg.it/sitemap.xml
 # Crawl delay per essere gentili con i server
 Crawl-delay: 1
 
+# Host
+Host: https://hypeg.it
+
 # Blocchiamo alcune directory comuni di Next.js che non servono ai bot
 Disallow: /_next/static/
 Disallow: /api/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /checkout/
 Disallow: *.json$
 
 # Permettiamo l'accesso alle immagini
 Allow: /images/
 Allow: /*.jpg$
+Allow: /*.jpeg$
 Allow: /*.png$
 Allow: /*.svg$
 Allow: /*.webp$
+Allow: /*.gif$
 
 # Per i social media bots
 User-agent: facebookexternalhit/1.1

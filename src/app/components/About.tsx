@@ -24,7 +24,7 @@ export default function About() {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              La Tua Agenzia di Comunicazione a Palermo
+              Agenzia Comunicazione Digitale Palermo | HipeG Creative Company
             </motion.h2>
             <motion.div 
               className="w-20 h-1 bg-purple-600 mt-2 mb-6"
@@ -38,9 +38,9 @@ export default function About() {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              <strong>HipeG</strong> è un'<strong>agenzia di comunicazione digitale</strong> con sede a <strong>Palermo</strong> che serve clienti in tutta la <strong>Sicilia</strong> e <strong>Italia</strong>. Siamo specializzati nella <strong>creazione di siti web</strong>, nel <strong>social media management</strong>, nel video marketing e nella grafica pubblicitaria. 
+              <strong>HipeG</strong> è un'<strong>agenzia di comunicazione digitale</strong> con sede a <strong>Palermo</strong> che serve clienti in tutta la <strong>Sicilia</strong> e <strong>Italia</strong>. Siamo specializzati nella <strong>creazione di siti web professionali</strong>, nel <strong>social media management</strong>, nel <strong>video marketing</strong> e nella <strong>grafica pubblicitaria</strong>. 
               <br /><br />
-              Il nostro team di <strong>social media manager</strong> e web designer lavora con passione per far crescere la presenza online delle aziende siciliane, trasformando idee creative in risultati concreti attraverso strategie digitali su misura.
+              Il nostro team di <strong>social media manager</strong>, web designer e esperti di marketing digitale lavora con passione per far crescere la presenza online delle aziende siciliane. Trasformiamo idee creative in risultati concreti attraverso strategie digitali su misura per <strong>agenzie di comunicazione Palermo</strong>, <strong>web design Sicilia</strong> e <strong>marketing digitale Italia</strong>.
             </motion.p>
             <motion.div 
               className="mt-8"
@@ -80,7 +80,7 @@ export default function About() {
               >
                 <Image
                   src="/4.jpeg"
-                  alt="Team collaboration and creative work"
+                  alt="Agenzia comunicazione Palermo - Team HipeG al lavoro su progetti digitali"
                   fill
                   className="object-cover"
                 />
@@ -97,7 +97,7 @@ export default function About() {
               >
                 <Image
                   src="/images/about/creative-workspace.jpg"
-                  alt="Creative workspace"
+                  alt="Agenzia marketing digitale Sicilia - Spazio creativo HipeG"
                   fill
                   className="object-cover"
                 />
